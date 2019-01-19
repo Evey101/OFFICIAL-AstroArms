@@ -7,16 +7,19 @@ public class mainscript : MonoBehaviour
     public KeyCode up, down, left, right, attack, grab;
     public Vector2 vert, horz;
     public GameObject player;
+    public GameObject cannon_enemy;
    // public GameObject item;
     public int grabbing;
-    public bool following;
     public int powerID;
+    public float timer;
+    public bool following;
+    public Rigidbody2D rb;
 
 	// Use this for initialization
 	void Start () 
     {
-        vert = new Vector2(0, .15f); // up and down speed
-        horz = new Vector2(.15f, 0);// left and right speed
+        vert = new Vector2(0, 10f); // up and down speed
+        horz = new Vector2(10f, 0);// left and right speed
         grabbing = 0;
         powerID = 0;
         player.GetComponent<SpriteRenderer>().color = Color.white;
@@ -26,21 +29,39 @@ public class mainscript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
+        timer += Time.deltaTime;
+
         if (Input.GetKey(up))
         {
-            player.transform.Translate(vert); // moving up
+            rb.velocity = vert; // moving up
+        }
+        if(Input.GetKeyUp(up))
+        {
+            rb.velocity = Vector2.zero;
         }
         if (Input.GetKey(down))
         {
-            player.transform.Translate(-vert); // moving down
+            rb.velocity = -vert; // moving down
+        }
+        if (Input.GetKeyUp(down))
+        {
+            rb.velocity = Vector2.zero;
         }
         if (Input.GetKey(left))
         {
-            player.transform.Translate(-horz); // moving left
+            rb.velocity = -horz; // moving left
+        }
+        if (Input.GetKeyUp(left))
+        {
+            rb.velocity = Vector2.zero;
         }
         if (Input.GetKey(right))
         {
-            player.transform.Translate(horz); // moving right
+            rb.velocity = horz; // moving right
+        }
+        if (Input.GetKeyUp(right))
+        {
+            rb.velocity = Vector2.zero;
         }
         if (Input.GetKeyDown(grab))
         {
@@ -73,6 +94,12 @@ public class mainscript : MonoBehaviour
         {
             grabbing = 0;
         }
+        if(timer >= 2)
+        {
+            Instantiate(cannon_enemy, new Vector3(0, 5, 0), Quaternion.identity);
+            timer = 0;
+        }
+
 	}
 
     private void OnTriggerEnter2D(Collider2D other)

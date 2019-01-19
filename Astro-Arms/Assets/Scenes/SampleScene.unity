@@ -363,8 +363,13 @@ MonoBehaviour:
   vert: {x: 0, y: 0}
   horz: {x: 0, y: 0}
   player: {fileID: 1405243449}
+  cannon_enemy: {fileID: 1383514578454204, guid: 6c44344fd2d9c47d389cd3461bfa9beb,
+    type: 2}
   grabbing: 0
   powerID: 0
+  timer: 0
+  following: 0
+  rb: {fileID: 1405243453}
 --- !u!50 &953867891
 Rigidbody2D:
   serializedVersion: 4
@@ -617,6 +622,7 @@ GameObject:
   - component: {fileID: 1405243452}
   - component: {fileID: 1405243451}
   - component: {fileID: 1405243450}
+  - component: {fileID: 1405243453}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -695,3 +701,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1405243453
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1405243449}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
