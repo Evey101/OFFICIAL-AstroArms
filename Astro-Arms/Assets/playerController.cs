@@ -109,7 +109,7 @@ public class playerController : MonoBehaviour
         //The collider is bigger than the actual player so that when the player gets close enough to a certain powerup, 
         //it recognizes which powerup is close by
     }
-    private void OnTriggerExit2D(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "red" || other.gameObject.tag == "green" || other.gameObject.tag == "blue" && grabbing == 0)
         {
