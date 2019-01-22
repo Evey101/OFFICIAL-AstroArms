@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,11 +24,11 @@ public class background : MonoBehaviour
     {
         if (collision.gameObject.tag == "space")
         {
-            collision.gameObject.transform.position = new Vector3(0, 20, 1);
+            collision.gameObject.transform.position = new Vector3(0, 20, 0);
         }
         if(collision.gameObject.tag == "planet")
         {
-            Destroy(collision.gameObject, 10f);
+            Destroy(collision.gameObject);
         }
     }
 }
