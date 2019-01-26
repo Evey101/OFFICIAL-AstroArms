@@ -5,7 +5,10 @@ using UnityEngine;
 public class cannon_enemy_move : MonoBehaviour 
 {
     public Rigidbody2D rb;
-    public bool isleft;
+    public GameObject point;
+    public GameObject bomb;
+    public bool start_shooting;
+    public float timer;
 
 	// Use this for initialization
 	void Start () 
@@ -16,19 +19,31 @@ public class cannon_enemy_move : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        //if (gameObject.transform.position.x > 0)
-        //{
-        //    isleft = false;
-        //}
-        //else
-        //{
-        //    isleft = true;
-        //}
+        transform.RotateAround(point.transform.position, Vector3.forward, 40 * Time.deltaTime);
 
-        for (int i = 0; i < 50; i++)
+        if(start_shooting == true)
         {
-            rb.AddForce(new Vector2(1 + i, -1 + i), ForceMode2D.Force);
+            timer += Time.deltaTime;
         }
-
+        if(timer >= .8f)
+        {
+            Instantiate(bomb, transform.position, Quaternion.identity);
+            timer = 0;
+        }
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "bomb trigger")
+        {
+            start_shooting = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "bomb trigger")
+        {
+            start_shooting = false;
+        }
+    }
 }
