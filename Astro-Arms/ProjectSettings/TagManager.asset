@@ -9,6 +9,8 @@ TagManager:
   - green
   - space
   - planet
+  - bomb trigger
+  - wall
   layers:
   - Default
   - TransparentFX
