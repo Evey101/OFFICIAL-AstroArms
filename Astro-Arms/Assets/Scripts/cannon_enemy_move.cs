@@ -38,6 +38,10 @@ public class cannon_enemy_move : MonoBehaviour
         {
             start_shooting = true;
         }
+        if (collision.gameObject.tag == "bomb enemy killer")
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
