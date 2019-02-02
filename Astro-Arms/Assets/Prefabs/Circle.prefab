@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
 <<<<<<< HEAD:Astro-Arms/Assets/Prefabs/cannon enemy.prefab
   m_GameObject: {fileID: 1383514578454204}
-  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 4, z: 0}
 =======
   m_GameObject: {fileID: 1991728442048496}
@@ -48,8 +48,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+<<<<<<< HEAD:Astro-Arms/Assets/Prefabs/Circle.prefab
 <<<<<<< HEAD:Astro-Arms/Assets/Prefabs/cannon enemy.prefab
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+=======
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> parent of 46557aa... test:Astro-Arms/Assets/Prefabs/cannon enemy.prefab
 --- !u!50 &50383044269778880
 =======
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -103,7 +107,6 @@ MonoBehaviour:
 <<<<<<< HEAD:Astro-Arms/Assets/Prefabs/cannon enemy.prefab
   rb: {fileID: 50383044269778880}
   isleft: 0
-  rotation: {x: 0, y: 0, z: 0}
 --- !u!212 &212778571734825474
 =======
   rb: {fileID: 50651897406807808}
