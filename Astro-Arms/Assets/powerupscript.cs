@@ -17,7 +17,7 @@ public class powerupscript : MonoBehaviour
     {
         storage = GameObject.Find("Player Manager");
         script = storage.GetComponent<playerController>();
-        speed = new Vector2(0, .5f);
+        speed = new Vector2(0, .5f); // speed for throwing
 	}
 	
 	// Update is called once per frame
@@ -25,9 +25,9 @@ public class powerupscript : MonoBehaviour
     {
         if (script.grabbing == 2)
         {
-            thrown = true;
+            thrown = true; // when it is thrown
         }
-        if (thrown == true && powerID == script.powerID)
+        if (thrown == true && powerID == script.powerID) // this is so that only the powerup that is instantiated goes up
         {
             transform.Translate(speed);
         }
