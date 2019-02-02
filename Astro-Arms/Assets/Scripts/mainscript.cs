@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class mainscript : MonoBehaviour 
 {
@@ -8,12 +10,13 @@ public class mainscript : MonoBehaviour
     public Vector2 vert, horz;
     public GameObject player;
     public GameObject cannon_enemy;
-   // public GameObject item;
     public int grabbing;
     public int powerID;
     public float timer;
     public bool following;
     public Rigidbody2D rb;
+    public float HP;
+    public TMP_Text health;
 
 	// Use this for initialization
 	void Start () 
@@ -24,11 +27,14 @@ public class mainscript : MonoBehaviour
         powerID = 0;
         player.GetComponent<SpriteRenderer>().color = Color.white;
         following = false;
+        HP = 100;
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
+        health.text = "HP: " + HP.ToString();
+
         timer += Time.deltaTime;
 
         if (Input.GetKey(up))

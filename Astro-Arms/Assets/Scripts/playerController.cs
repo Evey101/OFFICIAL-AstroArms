@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class playerController : MonoBehaviour 
 {
@@ -17,6 +19,8 @@ public class playerController : MonoBehaviour
     public GameObject cannon_enemy;
     public Vector3 urpos;
     public Rigidbody2D rb;
+    public float HP;
+    public TMP_Text health;
 
     // Use this for initialization
     void Start () 
@@ -27,12 +31,15 @@ public class playerController : MonoBehaviour
         grabbing = 0;
         powerID = 0;
         GetComponent<SpriteRenderer>().color = Color.white;
+        HP = 100;
+
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
         timer += Time.deltaTime;
+        health.text = "HP: " + HP.ToString();
 
         Move();
 
@@ -138,6 +145,13 @@ public class playerController : MonoBehaviour
         {
             powerID = 3;
         }
+
+        if (other.gameObject.tag == "bomb explosion")
+        {
+            HP -= 10;
+        }
+            
+            
 
 
         //The collider is bigger than the actual player so that when the player gets close enough to a certain powerup, 

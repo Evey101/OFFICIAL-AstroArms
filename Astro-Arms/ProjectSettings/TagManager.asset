@@ -12,6 +12,8 @@ TagManager:
   - bomb trigger
   - wall
   - bomb enemy killer
+  - bomb
+  - bomb explosion
   layers:
   - Default
   - TransparentFX

@@ -25,10 +25,8 @@ public class bomb_move : MonoBehaviour
             GetComponent<SpriteRenderer>().color = new Vector4(255, 0, 0, 255);
             transform.localScale = new Vector3(3, 3, 3);
             rb.velocity = new Vector2(0, -1);
+            gameObject.tag = "bomb explosion";
         }
-
         Destroy(gameObject, 4f);
     }
-
-
 }
