@@ -6,29 +6,19 @@ public class cannon_enemy_move : MonoBehaviour
 {
     public Rigidbody2D rb;
     public bool isleft;
+    public Vector3 rotation;
 
 	// Use this for initialization
 	void Start () 
     {
-        
+        rb.AddForce((Vector3.up), ForceMode2D.Impulse);
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        //if (gameObject.transform.position.x > 0)
-        //{
-        //    isleft = false;
-        //}
-        //else
-        //{
-        //    isleft = true;
-        //}
-
-        for (int i = 0; i < 50; i++)
-        {
-            rb.AddForce(new Vector2(1 + i, -1 + i), ForceMode2D.Force);
-        }
-
+        rotation = transform.eulerAngles;
+        Vector3 dir = Quaternion.AngleAxis(rotation.z, Vector3.forward) * Vector3.forward;
+        transform.Rotate(dir);
 	}
 }

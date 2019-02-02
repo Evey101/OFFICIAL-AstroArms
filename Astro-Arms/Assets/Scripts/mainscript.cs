@@ -33,7 +33,7 @@ public class mainscript : MonoBehaviour
 
         if (Input.GetKey(up))
         {
-            rb.velocity = vert; // moving up
+            rb.velocity = new Vector2(rb.velocity.x, vert.y); // moving up
         }
         if(Input.GetKeyUp(up))
         {
@@ -41,7 +41,7 @@ public class mainscript : MonoBehaviour
         }
         if (Input.GetKey(down))
         {
-            rb.velocity = -vert; // moving down
+            rb.velocity = new Vector2(rb.velocity.x, -vert.y); // moving down
         }
         if (Input.GetKeyUp(down))
         {
@@ -49,7 +49,7 @@ public class mainscript : MonoBehaviour
         }
         if (Input.GetKey(left))
         {
-            rb.velocity = -horz; // moving left
+            rb.velocity = new Vector2(-horz.x, rb.velocity.y); // moving left
         }
         if (Input.GetKeyUp(left))
         {
@@ -57,7 +57,7 @@ public class mainscript : MonoBehaviour
         }
         if (Input.GetKey(right))
         {
-            rb.velocity = horz; // moving right
+            rb.velocity = new Vector2(horz.x, rb.velocity.y); // moving right
         }
         if (Input.GetKeyUp(right))
         {
