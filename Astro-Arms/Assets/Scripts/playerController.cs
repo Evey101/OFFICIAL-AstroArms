@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class playerController : MonoBehaviour 
 {
@@ -17,6 +19,10 @@ public class playerController : MonoBehaviour
     public GameObject cannon_enemy;
     public Vector3 urpos;
     public Rigidbody2D rb;
+    public int HP;
+    public List<GameObject> current_HP;
+    public TMP_Text health;
+
 
     // Use this for initialization
     void Start () 
@@ -27,13 +33,14 @@ public class playerController : MonoBehaviour
         grabbing = 0;
         powerID = 0;
         GetComponent<SpriteRenderer>().color = Color.white;
+        HP = 5;
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
         timer += Time.deltaTime;
-
+        health.text = "HP";
         Move();
 
 
@@ -137,6 +144,11 @@ public class playerController : MonoBehaviour
         else if (other.gameObject.tag == "green" && grabbing == 0)
         {
             powerID = 3;
+        }
+        if(other.gameObject.tag == "bomb explosion")
+        {
+            Destroy(current_HP[HP]);
+            HP -= 1;
         }
 
 
