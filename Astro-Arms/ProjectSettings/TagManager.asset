@@ -11,6 +11,9 @@ TagManager:
   - planet
   - bomb trigger
   - wall
+  - bomb
+  - bomb explosion
+  - cannon enemy killer
   layers:
   - Default
   - TransparentFX

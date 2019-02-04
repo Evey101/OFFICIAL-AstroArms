@@ -45,10 +45,7 @@ public class cannon_enemy_move : MonoBehaviour
         //    isleft = true;
         //}
 
-        for (int i = 0; i < 50; i++)
-        {
-            rb.AddForce(new Vector2(1 + i, -1 + i), ForceMode2D.Force);
-        }
+
 
 	}
 
@@ -57,6 +54,10 @@ public class cannon_enemy_move : MonoBehaviour
         if(collision.gameObject.tag == "bomb trigger")
         {
             start_shooting = true;
+        }
+        if(collision.gameObject.tag == "cannon enemy killer")
+        {
+            Destroy(gameObject);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

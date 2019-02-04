@@ -20,7 +20,7 @@ public class playerController : MonoBehaviour
     public Vector3 urpos;
     public Rigidbody2D rb;
     public int HP;
-    public List<GameObject> current_HP;
+    public GameObject[] current_HP;
     public TMP_Text health;
 
 
@@ -33,7 +33,7 @@ public class playerController : MonoBehaviour
         grabbing = 0;
         powerID = 0;
         GetComponent<SpriteRenderer>().color = Color.white;
-        HP = 5;
+        HP = 4;
 	}
 	
 	// Update is called once per frame
@@ -149,6 +149,7 @@ public class playerController : MonoBehaviour
         {
             Destroy(current_HP[HP]);
             HP -= 1;
+            Debug.Log("collided");
         }
 
 
