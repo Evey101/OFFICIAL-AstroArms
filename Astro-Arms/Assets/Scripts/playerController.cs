@@ -154,13 +154,9 @@ public class playerController : MonoBehaviour
         {
             Destroy(current_HP[HP]);
             HP -= 1;
-            Debug.Log("collided");
+            Debug.Log(HP);
         }
 
-        if (other.gameObject.tag == "bomb explosion")
-        {
-            HP -= 10;
-        }
             
             
 
