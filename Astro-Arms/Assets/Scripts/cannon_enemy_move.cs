@@ -55,7 +55,7 @@ public class cannon_enemy_move : MonoBehaviour
         {
             start_shooting = true;
         }
-        if(collision.gameObject.tag == "cannon enemy killer")
+        if (collision.gameObject.tag == "bomb enemy killer")
         {
             Destroy(gameObject);
         }

@@ -157,6 +157,13 @@ public class playerController : MonoBehaviour
             Debug.Log("collided");
         }
 
+        if (other.gameObject.tag == "bomb explosion")
+        {
+            HP -= 10;
+        }
+            
+            
+
 
         //The collider is bigger than the actual player so that when the player gets close enough to a certain powerup, 
         //it recognizes which powerup is close by
