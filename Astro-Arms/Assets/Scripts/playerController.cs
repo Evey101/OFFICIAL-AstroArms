@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerController : MonoBehaviour 
 {
@@ -129,6 +130,10 @@ public class playerController : MonoBehaviour
         if (Input.GetKeyUp(right))
         {
             rb.velocity = Vector3.zero;
+        }
+        if(HP <= -1)
+        {
+            SceneManager.LoadScene(2);
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
