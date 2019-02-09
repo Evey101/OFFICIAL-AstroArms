@@ -7,12 +7,9 @@ using TMPro;
 public class mainscript : MonoBehaviour 
 {
     public KeyCode up, down, left, right, attack, grab;
-    public Vector2 vert, horz, puspawn;
-    public List<Vector2> spawnlist;
-    public float spawntime;
+    public Vector2 vert, horz;
     public GameObject player;
     public GameObject cannon_enemy;
-    public int mode;
     public int grabbing;
     public int powerID;
     public float timer;
@@ -24,8 +21,6 @@ public class mainscript : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-        spawntime = 0;
-        mode = 0;
         vert = new Vector2(0, 10f); // up and down speed
         horz = new Vector2(10f, 0);// left and right speed
         grabbing = 0;
@@ -38,14 +33,10 @@ public class mainscript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        spawntime += Time.deltaTime;
         health.text = "HP: " + HP.ToString();
 
         timer += Time.deltaTime;
-        //if (timer > 5)
-        //{
-            
-        //}
+
         if (Input.GetKey(up))
         {
             rb.velocity = vert; // moving up
