@@ -29,8 +29,8 @@ public class playerController : MonoBehaviour
     void Start () 
     {
         vert = new Vector2(0, 15f); // up and down speed
-        horz = new Vector2(15f, 0);// left and right speed
-        thrown = new Vector2(0, .5f);// this speed of 
+        horz = new Vector2(15f, 0); // left and right speed
+        thrown = new Vector2(0, .5f); // this speed of 
         grabbing = 0;
         powerID = 0;
         GetComponent<SpriteRenderer>().color = Color.white;
