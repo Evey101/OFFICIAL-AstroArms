@@ -11,6 +11,7 @@ public class cannon_enemy_move : MonoBehaviour
     public GameObject bomb;
     public bool start_shooting;
     public float timer;
+    public int hp;
 
 	// Use this for initialization
 	void Start () 
@@ -21,6 +22,10 @@ public class cannon_enemy_move : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
+        if (hp == 0)
+        {
+            Destroy(gameObject);
+        }
         rotation = transform.eulerAngles;
         Vector3 dir = Quaternion.AngleAxis(rotation.z, Vector3.forward) * Vector3.forward;
         transform.Rotate(dir);
@@ -58,6 +63,10 @@ public class cannon_enemy_move : MonoBehaviour
         if (collision.gameObject.tag == "bomb enemy killer")
         {
             Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "player bullet")
+        {
+            hp -= 1;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

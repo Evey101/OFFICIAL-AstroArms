@@ -18,6 +18,8 @@ TagManager:
   - rightbul
   - downbul
   - leftbul
+  - bullet
+  - player bullet
   layers:
   - Default
   - TransparentFX
