@@ -27,6 +27,7 @@ public class playerController : MonoBehaviour
     public int HP;
     public GameObject[] current_HP;
     public TMP_Text health;
+    public GameObject bullet;
 
 
     // Use this for initialization
@@ -49,6 +50,11 @@ public class playerController : MonoBehaviour
         timer += Time.deltaTime;
         health.text = "HP";
         Move();
+
+        if (Input.GetKeyDown(attack))
+        {
+            Instantiate(bullet, gameObject.transform.position, Quaternion.identity);
+        }
 
         if (spawntime > 1)
         {

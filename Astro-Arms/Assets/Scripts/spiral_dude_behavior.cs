@@ -8,6 +8,8 @@ public class spiral_dude_behavior : MonoBehaviour
     public float timer;
     public List<GameObject> bullets;
     public GameObject bullet;
+    public int hp;
+
 	// Use this for initialization
 	void Start () 
     {
@@ -18,6 +20,11 @@ public class spiral_dude_behavior : MonoBehaviour
 	void Update () 
     {
         timer += Time.deltaTime;
+
+        if (hp == 0)
+        {
+            Destroy(gameObject);
+        }
 
         if(timer >= 5)
         {
@@ -39,6 +46,14 @@ public class spiral_dude_behavior : MonoBehaviour
             //Debug.Log(i);
         }
         bullets.Clear();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "player bullet")
+        {
+            hp -= 1;
+        }
     }
 
 }
