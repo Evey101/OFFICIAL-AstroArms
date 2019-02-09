@@ -38,7 +38,7 @@ public class playerController : MonoBehaviour
         thrown = new Vector2(0, .5f); // this speed of 
         grabbing = 0;
         powerID = 0;
-        GetComponent<SpriteRenderer>().color = Color.white;
+        player.GetComponent<SpriteRenderer>().color = Color.white;
         HP = 4;
 	}
 	
@@ -50,7 +50,7 @@ public class playerController : MonoBehaviour
         health.text = "HP";
         Move();
 
-        if (spawntime > 10)
+        if (spawntime > 1)
         {
             powerup = powerups[Random.Range(0, 2)];
             spawn = spawnlist[Random.Range(0, 2)];
@@ -58,7 +58,7 @@ public class playerController : MonoBehaviour
             spawntime = 0;
         }
 
-        if (Input.GetKeyDown(grab))
+        if (Input.GetKeyDown(grab) && powerID != 0)
         {
             grabbing += 1; 
         }
@@ -90,18 +90,16 @@ public class playerController : MonoBehaviour
             if (powerID == 1)
             {
                 Instantiate(red, gameObject.transform.position, Quaternion.identity);
-                grabbing = 0;
             }
             if (powerID == 2)
             {
                 Instantiate(blue, gameObject.transform.position, Quaternion.identity);
-                grabbing = 0;
             }
             if (powerID == 3)
             {
                 Instantiate(green, gameObject.transform.position, Quaternion.identity);
-                grabbing = 0;
             }
+            grabbing = 0;
         }
         if (timer >= 5)
         {
@@ -157,7 +155,7 @@ public class playerController : MonoBehaviour
         }
         else if (other.gameObject.tag == "blue" && grabbing == 0)
         {
-          powerID = 2;
+            powerID = 2;
         }
         else if (other.gameObject.tag == "green" && grabbing == 0)
         {
@@ -172,7 +170,7 @@ public class playerController : MonoBehaviour
         }
 
             
-            
+           
 
 
         //The collider is bigger than the actual player so that when the player gets close enough to a certain powerup, 
@@ -180,7 +178,7 @@ public class playerController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "red" || other.gameObject.tag == "green" || other.gameObject.tag == "blue" && grabbing == 0)
+        if (other.gameObject.tag == "red" && grabbing == 0 || other.gameObject.tag == "green" && grabbing == 0 || other.gameObject.tag == "blue" && grabbing == 0)
         {
             powerID = 0;
         }
