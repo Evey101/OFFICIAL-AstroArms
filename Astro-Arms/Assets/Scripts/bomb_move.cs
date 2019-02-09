@@ -29,4 +29,12 @@ public class bomb_move : MonoBehaviour
         }
         Destroy(gameObject, 4f);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

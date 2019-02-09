@@ -9,8 +9,8 @@ public class background : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-        planetScrollSpeed = new Vector2(0, -0.05f);
-        spaceSrollSpd = new Vector2(0, -1);
+        planetScrollSpeed = new Vector2(0, -0.5f * Time.deltaTime);
+        spaceSrollSpd = new Vector2(0, -50 * Time.deltaTime);
 	}
 	
 	// Update is called once per frame
