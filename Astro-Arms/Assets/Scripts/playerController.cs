@@ -23,6 +23,9 @@ public class playerController : MonoBehaviour
     public int HP;
     public GameObject[] current_HP;
     public TMP_Text health;
+    public GameObject spiral_enemy;
+
+
 
 
     // Use this for initialization
@@ -95,6 +98,12 @@ public class playerController : MonoBehaviour
             Instantiate(cannon_enemy, new Vector3(0, 20, 0), Quaternion.identity);
             timer = 0;
         }
+        if (timer >= 5)
+        {
+            Instantiate(spiral_enemy, new Vector3(0, 20, 0), Quaternion.identity);
+            timer = 0;
+        }
+
     }
     private void Move()
     {
@@ -154,7 +163,11 @@ public class playerController : MonoBehaviour
         {
             Destroy(current_HP[HP]);
             HP -= 1;
-            Debug.Log(HP);
+        }
+        if (other.gameObject.tag == "bullet")
+        {
+            Destroy(current_HP[HP]);
+            HP -= 1;
         }
 
             
