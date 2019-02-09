@@ -8,15 +8,19 @@ using UnityEngine.SceneManagement;
 public class playerController : MonoBehaviour 
 {
     public KeyCode up, down, left, right, attack, grab;
-    public Vector2 vert, horz, thrown;
+    public Vector2 vert, horz, thrown, spawn;
+    public List<Vector2> spawnlist;
     public GameObject player;
     public GameObject item;
     public int grabbing;
     public int powerID;
+    public List<GameObject> powerups;
     public GameObject red;
     public GameObject green;
     public GameObject blue;
+    public GameObject powerup;
     public float timer;
+    public float spawntime;
     public GameObject cannon_enemy;
     public Vector3 urpos;
     public Rigidbody2D rb;
@@ -31,6 +35,7 @@ public class playerController : MonoBehaviour
     // Use this for initialization
     void Start () 
     {
+        rb = player.GetComponent<Rigidbody2D>();
         vert = new Vector2(0, 15f); // up and down speed
         horz = new Vector2(15f, 0); // left and right speed
         thrown = new Vector2(0, .5f); // this speed of 
@@ -43,10 +48,18 @@ public class playerController : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
+        spawntime += Time.deltaTime;
         timer += Time.deltaTime;
         health.text = "HP";
         Move();
 
+        if (spawntime > 10)
+        {
+            powerup = powerups[Random.Range(0, 2)];
+            spawn = spawnlist[Random.Range(0, 2)];
+            Instantiate(powerup, spawn, Quaternion.identity);
+            spawntime = 0;
+        }
 
         if (Input.GetKeyDown(grab))
         {
@@ -55,7 +68,7 @@ public class playerController : MonoBehaviour
        
         if (grabbing == 0)
         {
-            GetComponent<SpriteRenderer>().color = Color.white; //the color white is its standard state
+            player.GetComponent<SpriteRenderer>().color = Color.white; //the color white is its standard state
         }
 
         if (grabbing == 1) // this means that the key was pressed once, meaning it was used
@@ -63,15 +76,15 @@ public class playerController : MonoBehaviour
         {
             if (powerID == 1)
             {
-                GetComponent<SpriteRenderer>().color = Color.red;
+                player.GetComponent<SpriteRenderer>().color = Color.red;
             }
             if (powerID == 2)
             {
-                GetComponent<SpriteRenderer>().color = Color.blue;
+                player.GetComponent<SpriteRenderer>().color = Color.blue;
             }
             if (powerID == 3)
             {
-                GetComponent<SpriteRenderer>().color = Color.green;
+                player.GetComponent<SpriteRenderer>().color = Color.green;
             }
         }
         if (grabbing == 2) // this means that the key was pressed a second time, throwing the powerup and setting the player back to 
@@ -159,7 +172,8 @@ public class playerController : MonoBehaviour
         {
             powerID = 3;
         }
-        if(other.gameObject.tag == "bomb explosion")
+        if(other.gameObject.tag == "bomb explosion" || other.gameObject.tag == "rightbul" || other.gameObject.tag == "downbul" 
+           || other.gameObject.tag == "leftbul")
         {
             Destroy(current_HP[HP]);
             HP -= 1;

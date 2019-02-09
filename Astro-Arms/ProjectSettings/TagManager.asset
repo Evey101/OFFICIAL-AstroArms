@@ -14,6 +14,10 @@ TagManager:
   - bomb enemy killer
   - bomb
   - bomb explosion
+  - cannon enemy killer
+  - rightbul
+  - downbul
+  - leftbul
   layers:
   - Default
   - TransparentFX
