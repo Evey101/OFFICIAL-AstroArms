@@ -5,12 +5,11 @@ using UnityEngine;
 public class background : MonoBehaviour 
 {
     public GameObject  spaceScrolling,spaceScrolling1;
-    public Vector2 planetScrollSpeed, spaceSrollSpd;
+    public Vector2 spaceSrollSpd;
 	// Use this for initialization
 	void Start () 
     {
-        planetScrollSpeed = new Vector2(0, -0.5f * Time.deltaTime);
-        spaceSrollSpd = new Vector2(0, -50 * Time.deltaTime);
+        spaceSrollSpd = new Vector2(0, -40 * Time.deltaTime);
 	}
 	
 	// Update is called once per frame
@@ -23,11 +22,8 @@ public class background : MonoBehaviour
     {
         if (collision.gameObject.tag == "space")
         {
-            collision.gameObject.transform.position = new Vector3(0, 20, 0);
+            collision.gameObject.transform.position = new Vector3(0, 15, 0);
         }
-        if(collision.gameObject.tag == "planet")
-        {
-            Destroy(collision.gameObject);
-        }
+ 
     }
 }

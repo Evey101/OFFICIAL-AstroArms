@@ -147,6 +147,7 @@ public class playerController : MonoBehaviour
             if (!IsInBorder(transform.position))
             {
                 rb.velocity = new Vector2(horz.x, rb.velocity.y);
+               // gameObject.transform.position = new Vector3(-8.5, transform.position.y, transform.position.z);
             }
         }
         if (Input.GetKeyUp(left) )
