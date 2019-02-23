@@ -13,7 +13,8 @@ public class spiral_dude_behavior : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-		
+        StartCoroutine("spiral_dude_shoot");
+
 	}
 	
 	// Update is called once per frame
@@ -26,7 +27,7 @@ public class spiral_dude_behavior : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(timer >= 5)
+        if(timer >= 15)
         {
             StartCoroutine("spiral_dude_shoot");
             timer = 0;
@@ -43,9 +44,17 @@ public class spiral_dude_behavior : MonoBehaviour
             //bullets.Add(Instantiate(bullet, transform.position + new Vector3(-.5f, 0, 0), transform.rotation));           // for doubel spiral 
             bullets.Add(Instantiate(bullet, transform.position, transform.rotation));
             yield return new WaitForSeconds(.03f);
-            //Debug.Log(i);
         }
         bullets.Clear();
+        yield return new WaitForSeconds(.3f);
+        for (int i = 0; i < 100; i++)
+        {
+            gameObject.transform.Rotate(0, 0, -20);
+            //bullets.Add(Instantiate(bullet, transform.position + new Vector3(.5f, 0, 0), transform.rotation));            // for double spiral
+            //bullets.Add(Instantiate(bullet, transform.position + new Vector3(-.5f, 0, 0), transform.rotation));           // for doubel spiral 
+            bullets.Add(Instantiate(bullet, transform.position, transform.rotation));
+            yield return new WaitForSeconds(.03f);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
