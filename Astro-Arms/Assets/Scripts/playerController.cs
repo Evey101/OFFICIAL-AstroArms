@@ -60,7 +60,7 @@ public class playerController : MonoBehaviour
         {
             powerup = powerups[Random.Range(0, 2)];
             spawn = spawnlist[Random.Range(0, 2)];
-            Instantiate(powerup, spawn, Quaternion.identity);
+          //  Instantiate(powerup, spawn, Quaternion.identity);
             spawntime = 0;
         }
 
@@ -107,11 +107,7 @@ public class playerController : MonoBehaviour
             }
             grabbing = 0;
         }
-        if (timer >= 5)
-        {
-            Instantiate(cannon_enemy, new Vector3(0, 20, 0), Quaternion.identity);
-            timer = 0;
-        }
+
     }
     private void Move()
     {

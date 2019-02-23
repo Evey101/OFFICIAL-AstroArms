@@ -1015,7 +1015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &697083675
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1134,7 +1134,7 @@ MonoBehaviour:
   timer: 0
   bullets: []
   bullet: {fileID: 1961390726083538, guid: 03fab20cb600c4cbf97dc710df7acf09, type: 2}
-  hp: 0
+  hp: 2
 --- !u!1001 &712245096
 Prefab:
   m_ObjectHideFlags: 0
@@ -1816,7 +1816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1154324650
 Transform:
   m_ObjectHideFlags: 0
@@ -2211,17 +2211,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417027775}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 862866e95fbbc4b7eb9a05cffeccb681, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c790da25552a4c2386a548e9c004968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Leveltimer: 0
-  cannonEnemy_spawnTime: 0
-  cannonEnemy: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
-    type: 2}
-  vanillaEnemy: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
-    type: 2}
-  spiralEnemy: {fileID: 0}
-  triangleEnemy: {fileID: 0}
+  enemyWave:
+  - spawnPosition: {x: 2, y: 6, z: 0}
+    beginningTime: 8
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+  - spawnPosition: {x: 2, y: 6, z: 0}
+    beginningTime: 9
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+  - spawnPosition: {x: 2, y: 6, z: 0}
+    beginningTime: 10
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+  - spawnPosition: {x: 2, y: 6, z: 0}
+    beginningTime: 11
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+  - spawnPosition: {x: 2, y: 6, z: 0}
+    beginningTime: 12
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+  timePassing: 0
 --- !u!4 &1417027777
 Transform:
   m_ObjectHideFlags: 0
@@ -2401,7 +2415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1622014542
 Transform:
   m_ObjectHideFlags: 0
@@ -2788,7 +2802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1936521113
 Transform:
   m_ObjectHideFlags: 0
@@ -2847,7 +2861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2019231041
 Transform:
   m_ObjectHideFlags: 0
