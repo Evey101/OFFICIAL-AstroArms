@@ -51,6 +51,7 @@ public class playerController : MonoBehaviour
         health.text = "HP";
         Move();
 
+
         if (Input.GetKeyDown(attack))
         {
             Instantiate(bullet, gameObject.transform.position, Quaternion.identity);
@@ -109,38 +110,58 @@ public class playerController : MonoBehaviour
         }
 
     }
+    public static bool IsInBorder(Vector2 pos)
+    {
+        return ((float)pos.x >= -8.5 && (float)pos.x <= 8.5 && (float)pos.y >= -8.4f && (float)pos.y <= 8.4);
+    }
     private void Move()
     {
 
-        if (Input.GetKey(up))
+        if (Input.GetKey(up) )
         {
             rb.velocity = new Vector2(rb.velocity.x, vert.y); // moving up
+            if(!IsInBorder(transform.position))
+            {
+                rb.velocity = new Vector2(rb.velocity.x, -vert.y); 
+            }
         }
-        if(Input.GetKeyUp(up))
+        if(Input.GetKeyUp(up) )
         {
             rb.velocity = Vector3.zero;
         }
-        if (Input.GetKey(down))
+        if (Input.GetKey(down) )
         {
             rb.velocity = new Vector2(rb.velocity.x, -vert.y); // moving down
+            if (!IsInBorder(transform.position))
+            {
+                rb.velocity = new Vector2(rb.velocity.x, vert.y);
+            }
         }
-        if (Input.GetKeyUp(down))
+        if (Input.GetKeyUp(down) )
         {
             rb.velocity = Vector3.zero;
         }
-        if (Input.GetKey(left))
+        if (Input.GetKey(left) )
         {
             rb.velocity = new Vector2(-horz.x, rb.velocity.y); // moving left
+            if (!IsInBorder(transform.position))
+            {
+                rb.velocity = new Vector2(horz.x, rb.velocity.y);
+            }
         }
-        if (Input.GetKeyUp(left))
+        if (Input.GetKeyUp(left) )
         {
             rb.velocity = Vector3.zero;
         }
-        if (Input.GetKey(right))
+        if (Input.GetKey(right) )
         {
             rb.velocity = new Vector2(horz.x, rb.velocity.y); // moving right
+            if (!IsInBorder(transform.position))
+            {
+                rb.velocity = new Vector2(-horz.x, rb.velocity.y);
+            }
         }
-        if (Input.GetKeyUp(right))
+        if (Input.GetKeyUp(right) )
         {
             rb.velocity = Vector3.zero;
         }
