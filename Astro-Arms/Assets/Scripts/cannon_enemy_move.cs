@@ -41,16 +41,6 @@ public class cannon_enemy_move : MonoBehaviour
             timer = 0;
         }
 
-        //if (gameObject.transform.position.x > 0)
-        //{
-        //    isleft = false;
-        //}
-        //else
-        //{
-        //    isleft = true;
-        //}
-
-
 
 	}
 

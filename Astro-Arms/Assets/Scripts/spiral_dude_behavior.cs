@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spiral_dude_behavior : MonoBehaviour 
+public class spiral_dude_behavior : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float timer;
@@ -10,15 +10,15 @@ public class spiral_dude_behavior : MonoBehaviour
     public GameObject bullet;
     public int hp;
 
-	// Use this for initialization
-	void Start () 
+    // Use this for initialization
+    void Start()
     {
         StartCoroutine("spiral_dude_shoot");
 
-	}
-	
-	// Update is called once per frame
-	void Update () 
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         timer += Time.deltaTime;
 
@@ -27,13 +27,13 @@ public class spiral_dude_behavior : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(timer >= 15)
+        if (timer >= 15)
         {
             StartCoroutine("spiral_dude_shoot");
             timer = 0;
         }
 
-	}
+    }
 
     public IEnumerator spiral_dude_shoot()
     {
@@ -64,13 +64,4 @@ public class spiral_dude_behavior : MonoBehaviour
             hp -= 1;
         }
     }
-
 }
-/*
- *         for (int i = 0; i < 20; i++)                                                                    //spawns the ring of bullets 
-        {                                                                                               //spawns the ring of bullets 
-            bullets.Add(Instantiate(bullet, transform.position, Quaternion.identity));                  //spawns the ring of bullets 
-            bullets[i].transform.Rotate(0, 0, 20 * i);                                                  //spawns the ring of bullets 
-        }   
-
-*/

@@ -147,7 +147,7 @@ public class playerController : MonoBehaviour
             if (!IsInBorder(transform.position))
             {
                 rb.velocity = new Vector2(horz.x, rb.velocity.y);
-               // gameObject.transform.position = new Vector3(-8.5, transform.position.y, transform.position.z);
+                gameObject.transform.position = new Vector3(-8.4f, transform.position.y, transform.position.z);
             }
         }
         if (Input.GetKeyUp(left) )
@@ -196,9 +196,6 @@ public class playerController : MonoBehaviour
             
            
 
-
-        //The collider is bigger than the actual player so that when the player gets close enough to a certain powerup, 
-        //it recognizes which powerup is close by
     }
     private void OnTriggerExit2D(Collider2D other)
     {
