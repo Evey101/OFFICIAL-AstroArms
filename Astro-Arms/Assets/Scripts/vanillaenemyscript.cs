@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class vanillaenemyscript : MonoBehaviour 
 {
-    public int hp;
     public Vector2 speed;
 
 	// Use this for initialization
 	void Start () 
 	{
-        speed = new Vector2(0,-5);
+        speed = new Vector2(0,-8);
 	}
 	
 	// Update is called once per frame
@@ -18,4 +17,12 @@ public class vanillaenemyscript : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().velocity = speed;
 	}
+
+ void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "player bullet")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

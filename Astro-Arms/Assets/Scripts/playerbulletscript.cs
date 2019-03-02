@@ -18,4 +18,13 @@ public class playerbulletscript : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().velocity = speed;
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "enemy" || collision.gameObject.tag == "Finish")
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }

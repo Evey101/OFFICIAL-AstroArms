@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114230957145815428}
   m_Layer: 0
   m_Name: vanilla enemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46420dc61d7964cde9955420f2d45a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
   speed: {x: 0, y: 0}
 --- !u!212 &212371553505742156
 SpriteRenderer:

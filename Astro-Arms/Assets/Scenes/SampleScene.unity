@@ -683,6 +683,60 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 678386959}
+--- !u!1 &715288161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 715288162}
+  - component: {fileID: 715288163}
+  m_Layer: 0
+  m_Name: barrier (3)
+  m_TagString: Finish
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &715288162
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 715288161}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.5116186, y: 32.2, z: 89.91406}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1940933284}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &715288163
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 715288161}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -6.6957855, y: -20.400114}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 76.46759, y: 4.003742}
+  m_EdgeRadius: 0
 --- !u!1 &758293126
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,7 +927,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 953867887}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: -7.84, z: 0}
+  m_LocalPosition: {x: 0.52, y: -7.4, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -900,32 +954,13 @@ MonoBehaviour:
   horz: {x: 0, y: 0}
   thrown: {x: 0, y: 0}
   spawn: {x: 0, y: 0}
-  spawnlist:
-  - {x: -6, y: 13}
-  - {x: 0, y: 12}
-  - {x: 6, y: 13}
-  player: {fileID: 953867887}
-  item: {fileID: 0}
-  grabbing: 0
-  powerID: 0
-  powerups:
-  - {fileID: 1061116709}
-  - {fileID: 1319917636}
-  - {fileID: 228844473}
-  red: {fileID: 1319917636}
-  green: {fileID: 1061116709}
-  blue: {fileID: 228844473}
-  powerup: {fileID: 0}
   timer: 0
-  spawntime: 0
-  cannon_enemy: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
-    type: 2}
   urpos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   HP: 0
   current_HP: []
   health: {fileID: 654111086}
-  bullet: {fileID: 0}
+  bullet: {fileID: 1721722137306346, guid: 4ae7db51bce524953943f665918ac389, type: 2}
 --- !u!58 &953867890
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1219,7 +1254,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 15.4, y: 32.4}
+    oldSize: {x: 17.11111, y: 36}
     newSize: {x: 3.08, y: 6.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1676,63 +1711,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyWave:
-  - spawnPosition: {x: 2, y: 6, z: 0}
+  - spawnPosition: {x: -7, y: 11, z: 0}
     beginningTime: 3
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
-  - spawnPosition: {x: 0, y: 6, z: 0}
+  - spawnPosition: {x: -5, y: 11, z: 0}
     beginningTime: 4
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
-  - spawnPosition: {x: -2, y: 6, z: 0}
+  - spawnPosition: {x: 0, y: 11, z: 0}
     beginningTime: 5
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
-  - spawnPosition: {x: 0, y: 6, z: 0}
+  - spawnPosition: {x: 5, y: 11, z: 0}
     beginningTime: 6
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
-  - spawnPosition: {x: 2, y: 6, z: 0}
+  - spawnPosition: {x: 7, y: 11, z: 0}
     beginningTime: 7
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
-  - spawnPosition: {x: 3, y: 6, z: 0}
+  - spawnPosition: {x: 5, y: 11, z: 0}
     beginningTime: 8
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
-  - spawnPosition: {x: -0.5, y: 9, z: 0}
+  - spawnPosition: {x: -5, y: 9, z: 0}
     beginningTime: 9
     EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
-  - spawnPosition: {x: -0.5, y: 9, z: 0}
+  - spawnPosition: {x: -5, y: 9, z: 0}
     beginningTime: 11
     EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
-  - spawnPosition: {x: -0.5, y: 9, z: 0}
+  - spawnPosition: {x: -5, y: 9, z: 0}
     beginningTime: 13
     EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
-  - spawnPosition: {x: -0.5, y: 9, z: 0}
+  - spawnPosition: {x: -5, y: 9, z: 0}
     beginningTime: 15
     EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
-  - spawnPosition: {x: 0.5, y: 9, z: 0}
+  - spawnPosition: {x: -4, y: 9, z: 0}
     beginningTime: 9
     EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
-  - spawnPosition: {x: 0.5, y: 9, z: 0}
+  - spawnPosition: {x: -4, y: 9, z: 0}
     beginningTime: 11
     EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
-  - spawnPosition: {x: 0.5, y: 9, z: 0}
+  - spawnPosition: {x: -4, y: 9, z: 0}
     beginningTime: 13
     EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
-  - spawnPosition: {x: 0.5, y: 9, z: 0}
+  - spawnPosition: {x: -4, y: 9, z: 0}
     beginningTime: 15
     EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
-  - spawnPosition: {x: -3, y: 9, z: 0}
+  - spawnPosition: {x: -3, y: 11, z: 0}
     beginningTime: 18
     EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
       type: 2}
@@ -1848,7 +1883,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1417027775}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2133799, y: 1.2620289, z: 89.89844}
+  m_LocalPosition: {x: -5, y: 1, z: 89.89844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2339,6 +2374,7 @@ Transform:
   - {fileID: 1251975937}
   - {fileID: 1309563746}
   - {fileID: 305420019}
+  - {fileID: 715288162}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

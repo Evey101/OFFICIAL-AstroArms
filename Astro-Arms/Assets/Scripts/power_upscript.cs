@@ -14,7 +14,7 @@ public class power_upscript : MonoBehaviour
     {
         storage = GameObject.Find("player");
         script = storage.GetComponent<playerController>();
-        goUp = script.grabbing;
+
         up = new Vector2(0, 3);
 	}
 	

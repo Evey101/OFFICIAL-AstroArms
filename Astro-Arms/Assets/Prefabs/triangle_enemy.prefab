@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50074398864303314}
   m_Layer: 0
   m_Name: triangle_enemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,6 +106,7 @@ MonoBehaviour:
   stop: {x: 0, y: 0}
   go: {x: 0, y: 0}
   timer: 0
+  hurttime: 0
   gotimer: 0
   oldz: 0
   turn: 0
@@ -115,7 +116,7 @@ MonoBehaviour:
   canRotate: 0
   mode: 0
   state: 0
-  hp: 1
+  hp: 3
   rightbul: {fileID: 1751499262570724, guid: f5a84ec315d38420186a3f9da43143c3, type: 2}
   leftbul: {fileID: 1569975878004598, guid: 3eff3b5f1c04540fca0ff21ec8add503, type: 2}
   downbul: {fileID: 1604753590419010, guid: acd04f76644314fa184184c50f78996b, type: 2}

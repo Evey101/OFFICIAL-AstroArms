@@ -6,6 +6,8 @@ public class spiral_dude_behavior : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float timer;
+    public float movetime;
+    public Vector2 move;
     public List<GameObject> bullets;
     public GameObject bullet;
     public int hp;
@@ -14,6 +16,8 @@ public class spiral_dude_behavior : MonoBehaviour
     void Start()
     {
         StartCoroutine("spiral_dude_shoot");
+        movetime = 0;
+        move = new Vector2(0, -2);
 
     }
 
@@ -21,6 +25,15 @@ public class spiral_dude_behavior : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        if (movetime < 1)
+        {
+            movetime += Time.deltaTime;
+            GetComponent<Rigidbody2D>().velocity = move;
+        }
+        if (movetime >= 1)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        }
 
         if (hp == 0)
         {

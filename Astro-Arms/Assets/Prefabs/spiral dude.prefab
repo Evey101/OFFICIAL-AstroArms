@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114335095478983184}
   m_Layer: 0
   m_Name: spiral dude
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,6 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   timer: 0
+  movetime: 0
+  move: {x: 0, y: 0}
   bullets: []
   bullet: {fileID: 1961390726083538, guid: 03fab20cb600c4cbf97dc710df7acf09, type: 2}
   hp: 2

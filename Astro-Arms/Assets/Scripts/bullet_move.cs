@@ -19,8 +19,14 @@ public class bullet_move : MonoBehaviour
         //rb.AddForce(transform.forward, ForceMode2D.Impulse);
         //transform.Translate(.1f, 0, 0);
         rb.AddRelativeForce(new Vector2(5, 0));
-
-        Destroy(gameObject, 5f);
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Finish" || collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
 
