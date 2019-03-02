@@ -3,7 +3,30 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - red
+  - blue
+  - green
+  - space
+  - planet
+  - bomb trigger
+  - wall
+  - bomb enemy killer
+  - bomb
+  - bomb explosion
+  - cannon enemy killer
+  - rightbul
+  - downbul
+  - leftbul
+  - bullet
+  - player bullet
+<<<<<<< HEAD
+  - enemy
+=======
+  - vanilla enemy
+  - spiral bullet
+  - grabber
+>>>>>>> 9ddc728660965bc4c4ec915a9231d5290aa3023f
   layers:
   - Default
   - TransparentFX
