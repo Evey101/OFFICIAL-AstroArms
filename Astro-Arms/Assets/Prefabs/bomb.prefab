@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4627328533613214}
   - component: {fileID: 212479656984560086}
-  - component: {fileID: 58606601824033268}
   - component: {fileID: 114040006899304048}
   - component: {fileID: 50857571878946628}
+  - component: {fileID: 58394121604220876}
   m_Layer: 0
   m_Name: bomb
   m_TagString: bomb
@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1665156234486984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -48.719463, y: -9.807116, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63,7 +63,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58606601824033268
+--- !u!58 &58394121604220876
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -77,7 +77,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.21
 --- !u!114 &114040006899304048
 MonoBehaviour:
   m_ObjectHideFlags: 1

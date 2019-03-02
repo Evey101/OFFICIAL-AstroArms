@@ -42,10 +42,7 @@ public class mainscript : MonoBehaviour
         health.text = "HP: " + HP.ToString();
 
         timer += Time.deltaTime;
-        //if (timer > 5)
-        //{
-            
-        //}
+ 
         if (Input.GetKey(up))
         {
             rb.velocity = vert; // moving up

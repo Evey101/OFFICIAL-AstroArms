@@ -39,6 +39,7 @@ public class cannon_enemy_move : MonoBehaviour
         {
             Instantiate(bomb, transform.position, Quaternion.identity);
             timer = 0;
+            Debug.Log("spwned bomb");
         }
 
 

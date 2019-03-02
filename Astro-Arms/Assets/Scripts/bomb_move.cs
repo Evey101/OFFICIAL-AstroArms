@@ -23,7 +23,7 @@ public class bomb_move : MonoBehaviour
         if (timer >= 1)
         {
             GetComponent<SpriteRenderer>().color = new Vector4(255, 0, 0, 255);
-            transform.localScale = new Vector3(3, 3, 3);
+            transform.localScale = new Vector3(6, 6, 6);
             rb.velocity = new Vector2(0, -1);
             gameObject.tag = "bomb explosion";
         }

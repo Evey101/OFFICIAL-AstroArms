@@ -20,6 +20,8 @@ TagManager:
   - leftbul
   - bullet
   - player bullet
+  - vanilla enemy
+  - spiral bullet
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class playerController : MonoBehaviour 
+public class playerController : MonoBehaviour
 {
     public KeyCode up, down, left, right, attack, grab;
     public Vector2 vert, horz, thrown, spawn;
@@ -20,18 +20,16 @@ public class playerController : MonoBehaviour
     public GameObject blue;
     public GameObject powerup;
     public float timer;
-    public float spawntime;
     public GameObject cannon_enemy;
     public Vector3 urpos;
     public Rigidbody2D rb;
     public int HP;
     public GameObject[] current_HP;
     public TMP_Text health;
-    public GameObject bullet;
 
 
     // Use this for initialization
-    void Start () 
+    void Start()
     {
         rb = player.GetComponent<Rigidbody2D>();
         vert = new Vector2(0, 15f); // up and down speed
@@ -41,132 +39,54 @@ public class playerController : MonoBehaviour
         powerID = 0;
         player.GetComponent<SpriteRenderer>().color = Color.white;
         HP = 4;
-	}
-	
-	// Update is called once per frame
-	void Update () 
+    }
+
+    // Update is called once per frame
+    void Update()
     {
-        spawntime += Time.deltaTime;
         timer += Time.deltaTime;
         health.text = "HP";
         Move();
 
 
-        if (Input.GetKeyDown(attack))
-        {
-            Instantiate(bullet, gameObject.transform.position, Quaternion.identity);
-        }
-
-        if (spawntime > 1)
-        {
-            powerup = powerups[Random.Range(0, 2)];
-            spawn = spawnlist[Random.Range(0, 2)];
-          //  Instantiate(powerup, spawn, Quaternion.identity);
-            spawntime = 0;
-        }
-
-        if (Input.GetKeyDown(grab) && powerID != 0)
-        {
-            grabbing += 1; 
-        }
-       
-        if (grabbing == 0)
-        {
-            player.GetComponent<SpriteRenderer>().color = Color.white; //the color white is its standard state
-        }
-
-        if (grabbing == 1) // this means that the key was pressed once, meaning it was used
-            //right now, its just showing through the color change.
-        {
-            if (powerID == 1)
-            {
-                player.GetComponent<SpriteRenderer>().color = Color.red;
-            }
-            if (powerID == 2)
-            {
-                player.GetComponent<SpriteRenderer>().color = Color.blue;
-            }
-            if (powerID == 3)
-            {
-                player.GetComponent<SpriteRenderer>().color = Color.green;
-            }
-        }
-        if (grabbing == 2) // this means that the key was pressed a second time, throwing the powerup and setting the player back to 
-            //to its standard state
-        {
-            if (powerID == 1)
-            {
-                Instantiate(red, gameObject.transform.position, Quaternion.identity);
-            }
-            if (powerID == 2)
-            {
-                Instantiate(blue, gameObject.transform.position, Quaternion.identity);
-            }
-            if (powerID == 3)
-            {
-                Instantiate(green, gameObject.transform.position, Quaternion.identity);
-            }
-            grabbing = 0;
-        }
-
     }
-    public static bool IsInBorder(Vector2 pos)
-    {
-        return ((float)pos.x >= -8.5 && (float)pos.x <= 8.5 && (float)pos.y >= -8.4f && (float)pos.y <= 8.4);
-    }
+
     private void Move()
     {
 
-        if (Input.GetKey(up) )
+        if (Input.GetKey(up))
         {
             rb.velocity = new Vector2(rb.velocity.x, vert.y); // moving up
-            if(!IsInBorder(transform.position))
-            {
-                rb.velocity = new Vector2(rb.velocity.x, -vert.y); 
-            }
         }
-        if(Input.GetKeyUp(up) )
+        if (Input.GetKeyUp(up))
         {
             rb.velocity = Vector3.zero;
         }
-        if (Input.GetKey(down) )
+        if (Input.GetKey(down))
         {
             rb.velocity = new Vector2(rb.velocity.x, -vert.y); // moving down
-            if (!IsInBorder(transform.position))
-            {
-                rb.velocity = new Vector2(rb.velocity.x, vert.y);
-            }
         }
-        if (Input.GetKeyUp(down) )
+        if (Input.GetKeyUp(down))
         {
             rb.velocity = Vector3.zero;
         }
-        if (Input.GetKey(left) )
+        if (Input.GetKey(left))
         {
             rb.velocity = new Vector2(-horz.x, rb.velocity.y); // moving left
-            if (!IsInBorder(transform.position))
-            {
-                rb.velocity = new Vector2(horz.x, rb.velocity.y);
-                gameObject.transform.position = new Vector3(-8.4f, transform.position.y, transform.position.z);
-            }
         }
-        if (Input.GetKeyUp(left) )
+        if (Input.GetKeyUp(left))
         {
             rb.velocity = Vector3.zero;
         }
-        if (Input.GetKey(right) )
+        if (Input.GetKey(right))
         {
             rb.velocity = new Vector2(horz.x, rb.velocity.y); // moving right
-            if (!IsInBorder(transform.position))
-            {
-                rb.velocity = new Vector2(-horz.x, rb.velocity.y);
-            }
         }
-        if (Input.GetKeyUp(right) )
+        if (Input.GetKeyUp(right))
         {
             rb.velocity = Vector3.zero;
         }
-        if(HP <= -1)
+        if (HP <= -1)
         {
             SceneManager.LoadScene(2);
         }
@@ -185,8 +105,8 @@ public class playerController : MonoBehaviour
         {
             powerID = 3;
         }
-        if(other.gameObject.tag == "bomb explosion" || other.gameObject.tag == "rightbul" || other.gameObject.tag == "downbul" 
-           || other.gameObject.tag == "leftbul")
+        if (other.gameObject.tag == "bomb explosion" || other.gameObject.tag == "rightbul" || other.gameObject.tag == "downbul"
+            || other.gameObject.tag == "leftbul" || other.gameObject.tag == "vanilla enemy" || other.gameObject.tag == "spiral bullet")
         {
             Destroy(current_HP[HP]);
             HP -= 1;
@@ -199,9 +119,6 @@ public class playerController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "red" && grabbing == 0 || other.gameObject.tag == "green" && grabbing == 0 || other.gameObject.tag == "blue" && grabbing == 0)
-        {
-            powerID = 0;
-        }
+
     }
 }
