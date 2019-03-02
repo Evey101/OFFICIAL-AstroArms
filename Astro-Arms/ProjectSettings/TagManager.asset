@@ -22,6 +22,7 @@ TagManager:
   - player bullet
   - vanilla enemy
   - spiral bullet
+  - grabber
   layers:
   - Default
   - TransparentFX

@@ -26,7 +26,7 @@ public class playerController : MonoBehaviour
     public int HP;
     public GameObject[] current_HP;
     public TMP_Text health;
-
+    public Animator anim;
 
     // Use this for initialization
     void Start()
@@ -93,18 +93,6 @@ public class playerController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "red" && grabbing == 0)
-        {
-            powerID = 1;
-        }
-        else if (other.gameObject.tag == "blue" && grabbing == 0)
-        {
-            powerID = 2;
-        }
-        else if (other.gameObject.tag == "green" && grabbing == 0)
-        {
-            powerID = 3;
-        }
         if (other.gameObject.tag == "bomb explosion" || other.gameObject.tag == "rightbul" || other.gameObject.tag == "downbul"
             || other.gameObject.tag == "leftbul" || other.gameObject.tag == "vanilla enemy" || other.gameObject.tag == "spiral bullet")
         {
@@ -112,7 +100,6 @@ public class playerController : MonoBehaviour
             HP -= 1;
             Debug.Log(HP);
         }
-
             
            
 

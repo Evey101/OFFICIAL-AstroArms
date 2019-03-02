@@ -12,11 +12,12 @@ public class cannon_enemy_move : MonoBehaviour
     public bool start_shooting;
     public float timer;
     public int hp;
+    public bool free;
 
 	// Use this for initialization
 	void Start () 
     {
-        
+        free = true;
 	}
 	
 	// Update is called once per frame
@@ -26,20 +27,23 @@ public class cannon_enemy_move : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        rotation = transform.eulerAngles;
-        Vector3 dir = Quaternion.AngleAxis(rotation.z, Vector3.forward) * Vector3.forward;
-        transform.Rotate(dir);
-        transform.RotateAround(point.transform.position, Vector3.forward, 40 * Time.deltaTime);
+        if(free == true)
+        {
+            rotation = transform.eulerAngles;
+            Vector3 dir = Quaternion.AngleAxis(rotation.z, Vector3.forward) * Vector3.forward;
+            transform.Rotate(dir);
+            transform.RotateAround(point.transform.position, Vector3.forward, 40 * Time.deltaTime);
 
-        if(start_shooting == true)
-        {
-            timer += Time.deltaTime;
-        }
-        if(timer >= .8f)
-        {
-            Instantiate(bomb, transform.position, Quaternion.identity);
-            timer = 0;
-            Debug.Log("spwned bomb");
+            if (start_shooting == true)
+            {
+                timer += Time.deltaTime;
+            }
+            if (timer >= .8f)
+            {
+                Instantiate(bomb, transform.position, Quaternion.identity);
+                timer = 0;
+               // Debug.Log("spwned bomb");
+            }
         }
 
 
