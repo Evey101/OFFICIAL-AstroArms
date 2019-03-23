@@ -20,13 +20,25 @@ TagManager:
   - leftbul
   - bullet
   - player bullet
-<<<<<<< HEAD
   - enemy
-=======
-  - vanilla enemy
   - spiral bullet
   - grabber
->>>>>>> 9ddc728660965bc4c4ec915a9231d5290aa3023f
+<<<<<<< HEAD
+  - main par
+  - weak points
+  - ship
+  - shield
+  - enemy bullet
+  - missile
+  - missile2
+  - energy
+=======
+  - border
+  - cannon enemy
+  - spiral enemy
+  - triangle enemy
+  - vanilla enemy
+>>>>>>> sadiul-tester
   layers:
   - Default
   - TransparentFX

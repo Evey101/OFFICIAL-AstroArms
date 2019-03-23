@@ -17,6 +17,9 @@ public class playerController : MonoBehaviour
     public TMP_Text health;
     public Animator anim;
     public GameObject bullet;
+    public grabbing grabber;
+    public Animator anim;
+    public vanillaenemyscript vanilla_enemy_script;
 
     // Use this for initialization
     void Start()
@@ -27,16 +30,25 @@ public class playerController : MonoBehaviour
         thrown = new Vector2(0, .5f); // this speed of 
         HP = 4;
         cooldown = 0;
+ anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        //health.text = "HP";
+        health.text = "HP";
         Move();
         gametime += Time.deltaTime;
 
+if(Input.GetKey(KeyCode.Space))
+        {
+            anim.Play("hold animation");
+        }
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            anim.Play("grabbing animation");    
+        }
         if (Input.GetKey(attack))
         {
             cooldown += Time.deltaTime;

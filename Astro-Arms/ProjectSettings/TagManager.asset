@@ -23,6 +23,11 @@ TagManager:
   - enemy
   - spiral bullet
   - grabber
+  - border
+  - cannon enemy
+  - spiral enemy
+  - triangle enemy
+  - vanilla enemy  
   - main par
   - weak points
   - ship
@@ -31,7 +36,7 @@ TagManager:
   - missile
   - missile2
   - energy
-  layers:
+layers:
   - Default
   - TransparentFX
   - Ignore Raycast

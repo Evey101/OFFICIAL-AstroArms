@@ -56,7 +56,7 @@ public class spiral_dude_behavior : MonoBehaviour
             //bullets.Add(Instantiate(bullet, transform.position + new Vector3(.5f, 0, 0), transform.rotation));            // for double spiral
             //bullets.Add(Instantiate(bullet, transform.position + new Vector3(-.5f, 0, 0), transform.rotation));           // for doubel spiral 
             bullets.Add(Instantiate(bullet, transform.position, transform.rotation));
-            yield return new WaitForSeconds(.03f);
+            yield return new WaitForSeconds(.1f);
         }
         bullets.Clear();
         yield return new WaitForSeconds(.3f);

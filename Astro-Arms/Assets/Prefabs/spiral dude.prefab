@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114335095478983184}
   m_Layer: 0
   m_Name: spiral dude
-  m_TagString: enemy
+  m_TagString: spiral enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
