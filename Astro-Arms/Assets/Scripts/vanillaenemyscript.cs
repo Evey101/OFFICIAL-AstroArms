@@ -5,24 +5,51 @@ using UnityEngine;
 public class vanillaenemyscript : MonoBehaviour 
 {
     public Vector2 speed;
+    public bool free;
+    public GameObject grabber;
+    public Vector3 grabberpos;
+    public grabbing grabbing_script;
+    public int let_go_counter;
+
 
 	// Use this for initialization
 	void Start () 
 	{
-        speed = new Vector2(0,-8);
+        speed = new Vector2(0,-16);
+        free = true;
+        grabbing_script = FindObjectOfType<grabbing>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        GetComponent<Rigidbody2D>().velocity = speed;
+        grabberpos = GameObject.FindGameObjectWithTag("grabber").transform.position;
+        if (free == true)
+        {
+            GetComponent<Rigidbody2D>().velocity = speed;
+        }
+        else
+        {
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            transform.position = grabberpos;
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            let_go_counter = 1;
+
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            let_go_counter = 2;
+        }
 	}
 
- void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "player bullet")
         {
             Destroy(gameObject);
         }
-    }
+    } 
 }

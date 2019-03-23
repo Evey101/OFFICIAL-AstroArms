@@ -23,6 +23,11 @@ TagManager:
   - enemy
   - spiral bullet
   - grabber
+  - border
+  - cannon enemy
+  - spiral enemy
+  - triangle enemy
+  - vanilla enemy
   layers:
   - Default
   - TransparentFX

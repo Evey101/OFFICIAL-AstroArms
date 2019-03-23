@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114903257425870608}
   m_Layer: 0
   m_Name: cannon enemy
-  m_TagString: Untagged
+  m_TagString: cannon enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,6 +183,7 @@ MonoBehaviour:
   start_shooting: 0
   timer: 0
   hp: 40
+  free: 0
 --- !u!212 &212751044984163722
 SpriteRenderer:
   m_ObjectHideFlags: 1

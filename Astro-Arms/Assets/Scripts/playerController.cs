@@ -15,8 +15,10 @@ public class playerController : MonoBehaviour
     public int HP;
     public GameObject[] current_HP;
     public TMP_Text health;
-    public Animator anim;
     public GameObject bullet;
+    public grabbing grabber;
+    public Animator anim;
+    public vanillaenemyscript vanilla_enemy_script;
 
     // Use this for initialization
     void Start()
@@ -26,6 +28,7 @@ public class playerController : MonoBehaviour
         horz = new Vector2(15f, 0); // left and right speed
         thrown = new Vector2(0, .5f); // this speed of 
         HP = 4;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -36,16 +39,23 @@ public class playerController : MonoBehaviour
         Move();
 
 
+
+        if(Input.GetKey(KeyCode.Space))
+        {
+            anim.Play("hold animation");
+        }
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            anim.Play("grabbing animation");    
+        }
+
         if (Input.GetKeyDown(attack))
         {
             Instantiate(bullet, gameObject.transform.position, Quaternion.identity);
         }
 
     }
-    public static bool IsInBorder(Vector2 pos)
-    {
-        return ((float)pos.x >= -8.5 && (float)pos.x <= 8.5 && (float)pos.y >= -8.4f && (float)pos.y <= 8.4);
-    }
+
     private void Move()
     {
 
@@ -90,11 +100,11 @@ public class playerController : MonoBehaviour
     {
  
         if(other.gameObject.tag == "bomb explosion" || other.gameObject.tag == "rightbul" || other.gameObject.tag == "downbul" 
-           || other.gameObject.tag == "leftbul")
+           || other.gameObject.tag == "leftbul" || other.gameObject.tag == "spiral bullet" || other.gameObject.tag == "enemy")
         {
             Destroy(current_HP[HP]);
             HP -= 1;
-            Debug.Log(HP);
+           // Debug.Log(HP);
         }
     }
 }

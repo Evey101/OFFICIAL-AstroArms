@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114230957145815428}
   m_Layer: 0
   m_Name: vanilla enemy
-  m_TagString: enemy
+  m_TagString: vanilla enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,6 +105,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 0, y: 0}
+  free: 0
+  grabber: {fileID: 1846845726509416, guid: 5616a153fc1ce4eb6a5efa417ccb482e, type: 2}
+  grabberpos: {x: 0, y: 0, z: 0}
+  grabbing_script: {fileID: 0}
+  let_go_counter: 0
 --- !u!212 &212371553505742156
 SpriteRenderer:
   m_ObjectHideFlags: 1
