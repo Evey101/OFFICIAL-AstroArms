@@ -23,6 +23,14 @@ TagManager:
   - enemy
   - spiral bullet
   - grabber
+  - main par
+  - weak points
+  - ship
+  - shield
+  - enemy bullet
+  - missile
+  - missile2
+  - energy
   layers:
   - Default
   - TransparentFX

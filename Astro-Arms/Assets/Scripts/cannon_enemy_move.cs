@@ -18,6 +18,7 @@ public class cannon_enemy_move : MonoBehaviour
 	void Start () 
     {
         free = true;
+        hp = 2;
 	}
 	
 	// Update is called once per frame

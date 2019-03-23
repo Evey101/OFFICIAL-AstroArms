@@ -9,7 +9,7 @@ public class playerController : MonoBehaviour
 {
     public KeyCode up, down, left, right, attack, grab;
     public Vector2 vert, horz, thrown, spawn;
-    public float timer;
+    public float timer, cooldown, gametime;
     public Vector3 urpos;
     public Rigidbody2D rb;
     public int HP;
@@ -26,19 +26,25 @@ public class playerController : MonoBehaviour
         horz = new Vector2(15f, 0); // left and right speed
         thrown = new Vector2(0, .5f); // this speed of 
         HP = 4;
+        cooldown = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        health.text = "HP";
+        //health.text = "HP";
         Move();
+        gametime += Time.deltaTime;
 
-
-        if (Input.GetKeyDown(attack))
+        if (Input.GetKey(attack))
         {
-            Instantiate(bullet, gameObject.transform.position, Quaternion.identity);
+            cooldown += Time.deltaTime;
+            if (cooldown >= .1f)
+            {
+                Instantiate(bullet, gameObject.transform.position, Quaternion.identity);
+                cooldown = 0;
+            }
         }
 
     }
@@ -48,7 +54,6 @@ public class playerController : MonoBehaviour
     }
     private void Move()
     {
-
         if (Input.GetKey(up))
         {
             rb.velocity = new Vector2(rb.velocity.x, vert.y); // moving up
@@ -81,6 +86,7 @@ public class playerController : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
         }
+
         if (HP <= -1)
         {
             SceneManager.LoadScene(2);
@@ -90,7 +96,8 @@ public class playerController : MonoBehaviour
     {
  
         if(other.gameObject.tag == "bomb explosion" || other.gameObject.tag == "rightbul" || other.gameObject.tag == "downbul" 
-           || other.gameObject.tag == "leftbul")
+           || other.gameObject.tag == "leftbul" || other.gameObject.tag == "spiral bullet" || other.gameObject.tag == "enemy bullet" ||
+          other.gameObject.tag == "enemy")
         {
             Destroy(current_HP[HP]);
             HP -= 1;

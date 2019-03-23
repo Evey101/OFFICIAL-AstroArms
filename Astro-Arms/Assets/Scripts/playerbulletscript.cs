@@ -25,6 +25,21 @@ public class playerbulletscript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collision.gameObject.tag == "ship")
+        {
+            GameObject.Find("SHIPS").GetComponent<shipscript>().hp -= 1;
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "weak points")
+        {
+            GameObject.Find("SHIPS").GetComponent<shipscript>().hp -= 5;
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "shield")
+        {
+            GameObject.Find("SHIPS").GetComponent<shipscript>().shieldhp -= 1;
+            Destroy(gameObject);
+        }
     }
 
 }
