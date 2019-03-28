@@ -137,11 +137,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.694472, y: -2.8096974, z: 0.8499931}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1790380417}
-  - {fileID: 1179200985}
-  - {fileID: 114149907}
-  - {fileID: 2116744190}
+  m_Children: [{fileID: 1790380417}, {fileID: 1179200985}, {fileID: 114149907}, {
+      fileID: 2116744190}]
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -298,23 +295,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &280936605
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 280936606}
-  - component: {fileID: 280936607}
-  m_Layer: 0
-  m_Name: blasters (4)
-  m_TagString: weak points
-=======
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &247593604
 GameObject:
@@ -325,29 +306,15 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 247593606}
-  - component: {fileID: 2134965446}
   - component: {fileID: 247593605}
+  - component: {fileID: 247593607}
   m_Layer: 0
   m_Name: grabber
   m_TagString: grabber
->>>>>>> sadiul-tester
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
---- !u!4 &280936606
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 280936605}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.78, y: -1.59, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1623144904}
-=======
 --- !u!61 &247593605
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -386,7 +353,59 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
->>>>>>> sadiul-tester
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &247593607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 247593604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a392785fbc4d4170a31eb191a26bd4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 953867887}
+  cannon_enemy_script: {fileID: 114903257425870608, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
+    type: 2}
+  spriral_dude_script: {fileID: 114335095478983184, guid: 50d0e32d3aee349dcae0e1084b5c4394,
+    type: 2}
+  triangle_enemy_script: {fileID: 114236725397266290, guid: 68190e9a631ad42edbfe4788609ddc01,
+    type: 2}
+  vanilla_enemy_script: {fileID: 114230957145815428, guid: bafb113d87265411a8ce03d637b2b025,
+    type: 2}
+  intrigger: 0
+  Can_Grab: 0
+  let_go_counter: 0
+  grab: 0
+--- !u!1 &280936605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 280936606}
+  - component: {fileID: 280936607}
+  m_Layer: 0
+  m_Name: blasters (4)
+  m_TagString: weak points
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &280936606
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 280936605}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.78, y: -1.59, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1623144904}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &280936607
@@ -1226,12 +1245,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -6.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-<<<<<<< HEAD
-  m_Children:
-  - {fileID: 2134965444}
-=======
   m_Children: []
->>>>>>> sadiul-tester
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1269,18 +1283,17 @@ MonoBehaviour:
   - {fileID: 1336346096}
   - {fileID: 758293126}
   health: {fileID: 654111086}
-  bullet: {fileID: 1721722137306346, guid: 4ae7db51bce524953943f665918ac389, type: 2}
-  grabber: {fileID: 2134965446}
   anim: {fileID: 953867893}
-  vanilla_enemy_script: {fileID: 114230957145815428, guid: bafb113d87265411a8ce03d637b2b025,
-    type: 2}
+  bullet: {fileID: 1721722137306346, guid: 4ae7db51bce524953943f665918ac389, type: 2}
+  grabber: {fileID: 0}
+  vanilla_enemy_script: {fileID: 0}
 --- !u!58 &953867890
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 953867887}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1780,7 +1793,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4483415339886496, guid: 5616a153fc1ce4eb6a5efa417ccb482e, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114275817862563750, guid: 5616a153fc1ce4eb6a5efa417ccb482e,
         type: 2}
@@ -2102,44 +2115,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   enemyWave:
-  - spawnPosition: {x: -7, y: 11, z: 0}
+  - spawnPosition: {x: 0, y: 11, z: 0}
     beginningTime: 3
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
-  - spawnPosition: {x: -5, y: 11, z: 0}
-    beginningTime: 5
+  - spawnPosition: {x: -2.5, y: 12, z: 0}
+    beginningTime: 3
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
-  - spawnPosition: {x: 0, y: 11, z: 0}
+  - spawnPosition: {x: 2.5, y: 12, z: 0}
+    beginningTime: 3
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+  - spawnPosition: {x: 5, y: 13, z: 0}
+    beginningTime: 3
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+  - spawnPosition: {x: -5, y: 13, z: 0}
+    beginningTime: 3
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+  - spawnPosition: {x: -5, y: 9, z: 0}
     beginningTime: 7
-    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+    EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
-  - spawnPosition: {x: 5, y: 11, z: 0}
+  - spawnPosition: {x: -5, y: 9, z: 0}
     beginningTime: 9
-    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+    EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
-  - spawnPosition: {x: 7, y: 11, z: 0}
+  - spawnPosition: {x: -5, y: 9, z: 0}
     beginningTime: 11
-    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+    EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
-  - spawnPosition: {x: 5, y: 11, z: 0}
+  - spawnPosition: {x: -5, y: 9, z: 0}
     beginningTime: 13
-    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
-      type: 2}
-  - spawnPosition: {x: -5, y: 9, z: 0}
-    beginningTime: 17
     EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
-  - spawnPosition: {x: -5, y: 9, z: 0}
-    beginningTime: 19
-    EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
-      type: 2}
-  - spawnPosition: {x: -5, y: 9, z: 0}
-    beginningTime: 21
-    EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
-      type: 2}
-  - spawnPosition: {x: -5, y: 9, z: 0}
-    beginningTime: 23
+  - spawnPosition: {x: 5, y: 9, z: 0}
+    beginningTime: 15
     EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
   - spawnPosition: {x: 5, y: 9, z: 0}
@@ -2152,46 +2165,42 @@ MonoBehaviour:
       type: 2}
   - spawnPosition: {x: 5, y: 9, z: 0}
     beginningTime: 21
-    EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
-      type: 2}
-  - spawnPosition: {x: 5, y: 9, z: 0}
-    beginningTime: 23
     EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
   - spawnPosition: {x: -3, y: 11, z: 0}
-    beginningTime: 27
+    beginningTime: 23
     EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
       type: 2}
   - spawnPosition: {x: -1, y: 9, z: 0}
-    beginningTime: 30
+    beginningTime: 25
     EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
       type: 2}
   - spawnPosition: {x: 1, y: 9, z: 0}
-    beginningTime: 33
+    beginningTime: 27
     EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
       type: 2}
   - spawnPosition: {x: 3, y: 9, z: 0}
-    beginningTime: 36
+    beginningTime: 29
     EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
       type: 2}
   - spawnPosition: {x: -1, y: 19, z: 0}
-    beginningTime: 40
+    beginningTime: 33
     EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
       type: 2}
   - spawnPosition: {x: 0, y: 19, z: 0}
-    beginningTime: 41
+    beginningTime: 37
     EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
       type: 2}
   - spawnPosition: {x: 1, y: 19, z: 0}
-    beginningTime: 42
+    beginningTime: 40
     EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
       type: 2}
   - spawnPosition: {x: 5, y: 9, z: 0}
-    beginningTime: 47
+    beginningTime: 43
     EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
   - spawnPosition: {x: 5, y: 9, z: 0}
-    beginningTime: 49
+    beginningTime: 48
     EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
   - spawnPosition: {x: 5, y: 9, z: 0}
@@ -2210,78 +2219,129 @@ MonoBehaviour:
     beginningTime: 60
     EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
       type: 2}
-  - spawnPosition: {x: -4, y: 9, z: 0}
-    beginningTime: 65
+  - spawnPosition: {x: -2, y: 9, z: 0}
+    beginningTime: 56
     EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
       type: 2}
-  - spawnPosition: {x: -2, y: 9, z: 0}
-    beginningTime: 70
+  - spawnPosition: {x: 7, y: 9, z: 0}
+    beginningTime: 60
     EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
       type: 2}
   - spawnPosition: {x: 0, y: 9, z: 0}
+    beginningTime: 63
+    EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
+      type: 2}
+  - spawnPosition: {x: -2, y: 9, z: 0}
+    beginningTime: 66
+    EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
+      type: 2}
+  - spawnPosition: {x: 0, y: 9, z: 0}
+    beginningTime: 69
+    EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
+      type: 2}
+  - spawnPosition: {x: 2, y: 9, z: 0}
+    beginningTime: 72
+    EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
+      type: 2}
+  - spawnPosition: {x: 4, y: 9, z: 0}
     beginningTime: 75
     EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
       type: 2}
-  - spawnPosition: {x: 2, y: 9, z: 0}
-    beginningTime: 80
-    EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
-      type: 2}
-  - spawnPosition: {x: 4, y: 9, z: 0}
-    beginningTime: 85
-    EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
-      type: 2}
   - spawnPosition: {x: -3, y: 9, z: 0}
-    beginningTime: 88
+    beginningTime: 78
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
   - spawnPosition: {x: -2, y: 9, z: 0}
-    beginningTime: 90
+    beginningTime: 80
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
   - spawnPosition: {x: -1, y: 9, z: 0}
-    beginningTime: 92
+    beginningTime: 82
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
   - spawnPosition: {x: 0, y: 9, z: 0}
-    beginningTime: 94
+    beginningTime: 84
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
   - spawnPosition: {x: 1, y: 9, z: 0}
-    beginningTime: 96
+    beginningTime: 86
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
   - spawnPosition: {x: 2, y: 9, z: 0}
-    beginningTime: 98
+    beginningTime: 88
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
   - spawnPosition: {x: 3, y: 9, z: 0}
-    beginningTime: 100
+    beginningTime: 90
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
   - spawnPosition: {x: -4, y: 9, z: 0}
-    beginningTime: 96
+    beginningTime: 91
     EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
       type: 2}
   - spawnPosition: {x: 4, y: 9, z: 0}
-    beginningTime: 100
+    beginningTime: 91
     EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
       type: 2}
   - spawnPosition: {x: 0, y: 9, z: 0}
-    beginningTime: 105
+    beginningTime: 88
     EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
   - spawnPosition: {x: 0, y: 9, z: 0}
-    beginningTime: 108
+    beginningTime: 90
     EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
   - spawnPosition: {x: 0, y: 9, z: 0}
-    beginningTime: 111
+    beginningTime: 92
     EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
   - spawnPosition: {x: 0, y: 9, z: 0}
-    beginningTime: 114
+    beginningTime: 94
     EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
       type: 2}
+  - spawnPosition: {x: 4, y: 9, z: 0}
+    beginningTime: 98
+    EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
+      type: 2}
+  - spawnPosition: {x: -4, y: 9, z: 0}
+    beginningTime: 100
+    EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
+      type: 2}
+  - spawnPosition: {x: -1, y: 9, z: 0}
+    beginningTime: 102
+    EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
+      type: 2}
+  - spawnPosition: {x: -4, y: 6, z: 0}
+    beginningTime: 106
+    EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
+      type: 2}
+  - spawnPosition: {x: -1, y: 6, z: 0}
+    beginningTime: 110
+    EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
+      type: 2}
+  - spawnPosition: {x: -1, y: 9, z: 0}
+    beginningTime: 112
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+  - spawnPosition: {x: 1, y: 9, z: 0}
+    beginningTime: 112
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+  - spawnPosition: {x: -2, y: 9, z: 0}
+    beginningTime: 112
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+  - spawnPosition: {x: 2, y: 9, z: 0}
+    beginningTime: 112
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+  - spawnPosition: {x: 0, y: 9, z: 0}
+    beginningTime: 112
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+<<<<<<< HEAD
+  timePassing: 16
+=======
   - spawnPosition: {x: 4, y: 19, z: 0}
     beginningTime: 120
     EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
@@ -2302,27 +2362,8 @@ MonoBehaviour:
     beginningTime: 120
     EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
       type: 2}
-  - spawnPosition: {x: -1, y: 9, z: 0}
-    beginningTime: 122
-    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
-      type: 2}
-  - spawnPosition: {x: 1, y: 9, z: 0}
-    beginningTime: 123
-    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
-      type: 2}
-  - spawnPosition: {x: -2, y: 9, z: 0}
-    beginningTime: 124
-    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
-      type: 2}
-  - spawnPosition: {x: 2, y: 9, z: 0}
-    beginningTime: 125
-    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
-      type: 2}
-  - spawnPosition: {x: 0, y: 9, z: 0}
-    beginningTime: 126
-    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
-      type: 2}
   timePassing: 0
+>>>>>>> caaa08f3ee687ec88dc1c07756431ed01491b929
 --- !u!4 &1417027777
 Transform:
   m_ObjectHideFlags: 0
@@ -2892,7 +2933,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2012265401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9, y: 15.6, z: 0}
+  m_LocalPosition: {x: 0.9, y: 20, z: 0}
   m_LocalScale: {x: 2.020147, y: 2.020147, z: 2.020147}
   m_Children:
   - {fileID: 1894581361}
@@ -2901,7 +2942,7 @@ Transform:
   - {fileID: 816717375}
   - {fileID: 1948518145}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2012265404
 MonoBehaviour:
@@ -3261,87 +3302,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
-<<<<<<< HEAD
---- !u!1 &2134965443
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 2134965444}
-  - component: {fileID: 2134965446}
-  - component: {fileID: 2134965445}
-  - component: {fileID: 2134965447}
-  m_Layer: 0
-  m_Name: grabber
-  m_TagString: grabber
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &2134965444
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2134965443}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.02, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 953867888}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &2134965445
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2134965443}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.025246441, y: -0.07573938}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.4746333, y: 0.84852123}
-  m_EdgeRadius: 0
-=======
->>>>>>> sadiul-tester
---- !u!114 &2134965446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114275817862563750, guid: 5616a153fc1ce4eb6a5efa417ccb482e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1113063103}
-  m_GameObject: {fileID: 247593604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9dfa216bb45f498fb4a17a6c53ac6b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 953867887}
-  cannon_enemy_script: {fileID: 114903257425870608, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
-    type: 2}
-  spriral_dude_script: {fileID: 114335095478983184, guid: 50d0e32d3aee349dcae0e1084b5c4394,
-    type: 2}
-  triangle_enemy_script: {fileID: 114236725397266290, guid: 68190e9a631ad42edbfe4788609ddc01,
-    type: 2}
-  vanilla_enemy_script: {fileID: 114230957145815428, guid: bafb113d87265411a8ce03d637b2b025,
-    type: 2}
-  intrigger: 0
-  Can_Grab: 0
-  let_go_counter: 0
-  grab: 0
