@@ -114,5 +114,9 @@ if(Input.GetKey(KeyCode.Space))
             HP -= 1;
             Debug.Log(HP);
         }
+        if (other.gameObject.tag == "thrown")
+        {
+            Destroy(gameObject);
+        }
     }
 }

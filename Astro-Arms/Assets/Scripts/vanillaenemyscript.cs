@@ -42,6 +42,7 @@ public class vanillaenemyscript : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             let_go_counter = 2;
+           // gameObject.tag = "thrown";
         }
 	}
 
@@ -51,5 +52,18 @@ public class vanillaenemyscript : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    } 
+        if(collision.gameObject.tag == "thrown")
+        {
+            Destroy(gameObject);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "grabber")
+        {
+            gameObject.tag = "thrown";
+            Debug.Log("tag changed");
+
+        }    
+    }
 }

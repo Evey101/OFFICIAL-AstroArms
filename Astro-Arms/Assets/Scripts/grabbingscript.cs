@@ -33,6 +33,14 @@ public class grabbingscript : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if(Input.GetKey(KeyCode.Space))
+        {
+            GetComponent<BoxCollider2D>().enabled = false;
+        }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            GetComponent<BoxCollider2D>().enabled = true;
+        }
 
         if(collision.gameObject.tag == "vanilla enemy")
         {
@@ -52,13 +60,13 @@ public class grabbingscript : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<trianglescript>().let_go_counter == 1 && Can_Grab == true)
             {
-                collision.gameObject.GetComponent<trianglescript>().free = false;
+                collision.gameObject.GetComponent<trianglescript>().free = 2;
                 Can_Grab = false;
             }
             if (collision.gameObject.GetComponent<trianglescript>().let_go_counter == 2)
             {
                 Debug.Log("freeee");
-                collision.gameObject.GetComponent<trianglescript>().free = true;
+                collision.gameObject.GetComponent<trianglescript>().free = 3;
                 collision.gameObject.GetComponent<trianglescript>().thrown = true;
             }
         }

@@ -50,7 +50,7 @@ public class shipscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Current Status: " + myStatus); 
+        //Debug.Log("Current Status: " + myStatus); 
         switch(myStatus)
         {
             case Status.phase0:
@@ -73,12 +73,12 @@ public class shipscript : MonoBehaviour
             if (timer > 1)
             {
                 GetComponent<Rigidbody2D>().velocity = speed;
-                Debug.Log("going right");
+                //Debug.Log("going right");
             }
             if (timer < 1)
             {
                 GetComponent<Rigidbody2D>().velocity = -speed;
-                Debug.Log("going left");
+                //Debug.Log("going left");
             }
             if (timer >= 2)
             {

@@ -22,6 +22,18 @@ TagManager:
   - right bul
   - enemy bullet
   - spiral bullet
+  - player bullet
+  - energy
+  - missile2
+  - missile
+  - triangle enemy
+  - spiral enemy
+  - vanilla enemy
+  - rightbul
+  - cannon enemy
+  - bomb
+  - green
+  - thrown
   layers:
   - Default
   - TransparentFX
