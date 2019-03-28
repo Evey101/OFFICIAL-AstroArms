@@ -137,8 +137,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.694472, y: -2.8096974, z: 0.8499931}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: [{fileID: 1790380417}, {fileID: 1179200985}, {fileID: 114149907}, {
-      fileID: 2116744190}]
+  m_Children:
+  - {fileID: 1790380417}
+  - {fileID: 1179200985}
+  - {fileID: 114149907}
+  - {fileID: 2116744190}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -295,7 +298,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &247593604
 GameObject:
@@ -306,7 +309,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 247593606}
-  - component: {fileID: 2134965446}
   - component: {fileID: 247593605}
   m_Layer: 0
   m_Name: grabber
@@ -1252,14 +1254,17 @@ MonoBehaviour:
   urpos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   HP: 0
-  current_HP: [{fileID: 1070453915}, {fileID: 1838305999}, {fileID: 988174876}, {
-      fileID: 1336346096}, {fileID: 758293126}]
+  current_HP:
+  - {fileID: 1070453915}
+  - {fileID: 1838305999}
+  - {fileID: 988174876}
+  - {fileID: 1336346096}
+  - {fileID: 758293126}
   health: {fileID: 654111086}
   anim: {fileID: 953867893}
-  vanilla_enemy_script: {fileID: 114230957145815428, guid: bafb113d87265411a8ce03d637b2b025,
-    type: 2}
   bullet: {fileID: 1721722137306346, guid: 4ae7db51bce524953943f665918ac389, type: 2}
-  grabber: {fileID: 2134965446}
+  grabber: {fileID: 0}
+  vanilla_enemy_script: {fileID: 0}
 --- !u!58 &953867890
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1766,7 +1771,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4483415339886496, guid: 5616a153fc1ce4eb6a5efa417ccb482e, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114275817862563750, guid: 5616a153fc1ce4eb6a5efa417ccb482e,
         type: 2}
@@ -2887,7 +2892,7 @@ Transform:
   - {fileID: 816717375}
   - {fileID: 1948518145}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2012265404
 MonoBehaviour:
@@ -3247,46 +3252,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &2134965443
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 2134965444}
-  - component: {fileID: 2134965446}
-  - component: {fileID: 2134965445}
-  - component: {fileID: 2134965447}
-  m_Layer: 0
-  m_Name: grabber
-  m_TagString: grabber
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &2134965446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114275817862563750, guid: 5616a153fc1ce4eb6a5efa417ccb482e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1113063103}
-  m_GameObject: {fileID: 247593604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9dfa216bb45f498fb4a17a6c53ac6b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 953867887}
-  cannon_enemy_script: {fileID: 114903257425870608, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
-    type: 2}
-  spriral_dude_script: {fileID: 114335095478983184, guid: 50d0e32d3aee349dcae0e1084b5c4394,
-    type: 2}
-  triangle_enemy_script: {fileID: 114236725397266290, guid: 68190e9a631ad42edbfe4788609ddc01,
-    type: 2}
-  vanilla_enemy_script: {fileID: 114230957145815428, guid: bafb113d87265411a8ce03d637b2b025,
-    type: 2}
-  intrigger: 0
-  Can_Grab: 0
-  let_go_counter: 0
-  grab: 0

@@ -4,39 +4,25 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - red
-  - blue
-  - green
-  - space
-  - planet
-  - bomb trigger
-  - wall
-  - bomb enemy killer
-  - bomb
-  - bomb explosion
-  - cannon enemy killer
-  - rightbul
-  - downbul
-  - leftbul
-  - bullet
-  - player bullet
-  - enemy
-  - spiral bullet
-  - grabber
-  - border
-  - cannon enemy
-  - spiral enemy
-  - triangle enemy
-  - vanilla enemy  
-  - main par
   - weak points
+  - border
+  - grabber
+  - bomb enemy killer
   - ship
   - shield
+  - bomb trigger
+  - space
+  - enemy
+  - cannon enemy killer
+  - blue
+  - red
+  - Undefined
+  - down bul
+  - left bul
+  - right bul
   - enemy bullet
-  - missile
-  - missile2
-  - energy
-layers:
+  - spiral bullet
+  layers:
   - Default
   - TransparentFX
   - Ignore Raycast

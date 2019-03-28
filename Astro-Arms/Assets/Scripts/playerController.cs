@@ -18,7 +18,6 @@ public class playerController : MonoBehaviour
     public Animator anim;
     public GameObject bullet;
     public grabbing grabber;
-    public Animator anim;
     public vanillaenemyscript vanilla_enemy_script;
 
     // Use this for initialization
