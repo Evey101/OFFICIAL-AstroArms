@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class grabbing2 : MonoBehaviour 
+public class grabbing2 : MonoBehaviour
 {
     public GameObject player;
     public cannon_enemy_move cannon_enemy_script;
@@ -14,17 +14,17 @@ public class grabbing2 : MonoBehaviour
     public int let_go_counter;
     public bool grab;
 
-	// Use this for initialization
-	void Start () 
+    // Use this for initialization
+    void Start()
     {
         Can_Grab = true;
-	}
-	
-	// Update is called once per frame
-	void Update () 
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         transform.position = player.transform.position + new Vector3(0f, 2f, 0f);
-	}  
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -34,7 +34,7 @@ public class grabbing2 : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
 
-        if(collision.gameObject.tag == "vanilla enemy")
+        if (collision.gameObject.tag == "vanilla enemy")
         {
             if (collision.gameObject.GetComponent<vanillaenemyscript>().let_go_counter == 1 && Can_Grab == true)
             {
@@ -52,13 +52,13 @@ public class grabbing2 : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<trianglescript>().let_go_counter == 1 && Can_Grab == true)
             {
-                collision.gameObject.GetComponent<trianglescript>().free = false;
+                collision.gameObject.GetComponent<trianglescript>().free = 2;
                 Can_Grab = false;
             }
             if (collision.gameObject.GetComponent<trianglescript>().let_go_counter == 2)
             {
                 Debug.Log("freeee");
-                collision.gameObject.GetComponent<trianglescript>().free = true;
+                collision.gameObject.GetComponent<trianglescript>().free = 1;
                 collision.gameObject.GetComponent<trianglescript>().thrown = true;
             }
         }
