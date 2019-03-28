@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class grabbing : MonoBehaviour 
+public class grabbing2 : MonoBehaviour 
 {
     public GameObject player;
     public cannon_enemy_move cannon_enemy_script;
