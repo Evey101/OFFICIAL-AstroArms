@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManagerScript : MonoBehaviour
 {
+    public int mode;
+
     [System.Serializable]
     public class WaveSpecs
     {

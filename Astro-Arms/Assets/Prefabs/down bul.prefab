@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 58547914032137564}
   m_Layer: 0
   m_Name: down bul
-  m_TagString: downbul
+  m_TagString: down bul
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +92,6 @@ MonoBehaviour:
   right: {x: 0, y: 0}
   down: {x: 0, y: 0}
   left: {x: 0, y: 0}
-  storage: {fileID: 0}
   script: {fileID: 0}
   mode: 0
   timer: 0
