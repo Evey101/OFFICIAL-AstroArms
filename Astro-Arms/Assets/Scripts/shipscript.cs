@@ -105,7 +105,7 @@ public class shipscript : MonoBehaviour
         if (start == 0 && starttime < 5)
         {
             phase = 0;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, -2);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, -3);
            // Debug.Log("moving down");
         }
         if (start == 0 && starttime >= 5)

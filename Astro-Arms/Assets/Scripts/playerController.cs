@@ -19,6 +19,8 @@ public class playerController : MonoBehaviour
     public GameObject bullet;
     public grabbing grabber;
     public vanillaenemyscript vanilla_enemy_script;
+    public shipscript boss_script;
+    public GameObject boss;
 
     // Use this for initialization
     void Start()
@@ -29,7 +31,8 @@ public class playerController : MonoBehaviour
         thrown = new Vector2(0, .5f); // this speed of 
         HP = 4;
         cooldown = 0;
- anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
+        GetComponent<AudioSource>().Play();
     }
 
     // Update is called once per frame
@@ -40,7 +43,13 @@ public class playerController : MonoBehaviour
         Move();
         gametime += Time.deltaTime;
 
-if(Input.GetKey(KeyCode.Space))
+        //if(gametime >= 120)
+        //{
+        //    boss_script.phase = 0;
+        //    GetComponent<AudioSource>().Pause();
+        //    //boss.GetComponent<AudioSource>().Play();
+        //}
+        if(Input.GetKey(KeyCode.Space))
         {
             anim.Play("hold animation");
         }
@@ -106,8 +115,8 @@ if(Input.GetKey(KeyCode.Space))
     private void OnTriggerEnter2D(Collider2D other)
     {
  
-        if(other.gameObject.tag == "bomb explosion" || other.gameObject.tag == "rightbul" || other.gameObject.tag == "downbul" 
-           || other.gameObject.tag == "leftbul" || other.gameObject.tag == "spiral bullet" || other.gameObject.tag == "enemy bullet" ||
+        if(other.gameObject.tag == "bomb explosion" || other.gameObject.tag == "rightbul" || other.gameObject.tag == "down bul" 
+           || other.gameObject.tag == "left bul" || other.gameObject.tag == "spiral bullet" || other.gameObject.tag == "enemy bullet" ||
           other.gameObject.tag == "enemy")
         {
             Destroy(current_HP[HP]);

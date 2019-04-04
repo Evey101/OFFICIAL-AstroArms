@@ -9,7 +9,7 @@ public class background : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-        spaceSrollSpd = new Vector2(0, -20 * Time.deltaTime);
+        spaceSrollSpd = new Vector2(-20 * Time.deltaTime, 0);
 	}
 	
 	// Update is called once per frame
@@ -21,7 +21,7 @@ public class background : MonoBehaviour
     {
         if (collision.gameObject.tag == "space")
         {
-            collision.gameObject.transform.position = new Vector3(0, 5, 0);
+            collision.gameObject.transform.position = new Vector3(0f, 5f, 0f);
         }
  
     }
