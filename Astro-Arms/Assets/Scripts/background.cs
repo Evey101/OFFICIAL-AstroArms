@@ -21,7 +21,7 @@ public class background : MonoBehaviour
     {
         if (collision.gameObject.tag == "space")
         {
-            collision.gameObject.transform.position = new Vector3(0f, 5f, 0f);
+            collision.gameObject.transform.position = new Vector3(0f, 6.4f, 0f);
         }
  
     }

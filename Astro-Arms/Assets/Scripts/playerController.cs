@@ -21,18 +21,22 @@ public class playerController : MonoBehaviour
     public vanillaenemyscript vanilla_enemy_script;
     public shipscript boss_script;
     public GameObject boss;
+    public bool canHit;
+    public float hittime;
+    public bool changedrag;
 
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        vert = new Vector2(0, 15f); // up and down speed
-        horz = new Vector2(15f, 0); // left and right speed
+        vert = new Vector2(0, 50f); // up and down speed
+        horz = new Vector2(50f, 0); // left and right speed
         thrown = new Vector2(0, .5f); // this speed of 
         HP = 4;
         cooldown = 0;
         anim = GetComponent<Animator>();
         GetComponent<AudioSource>().Play();
+        canHit = true;
     }
 
     // Update is called once per frame
@@ -42,6 +46,19 @@ public class playerController : MonoBehaviour
         health.text = "HP";
         Move();
         gametime += Time.deltaTime;
+    
+        if(canHit == true)
+        {
+            hittime = 0;
+        }
+        if (canHit == false)
+        {
+            hittime += Time.deltaTime;
+            if (hittime >= .75f)
+            {
+                canHit = true;
+            }
+        }
 
         //if(gametime >= 120)
         //{
@@ -74,37 +91,29 @@ public class playerController : MonoBehaviour
     }
     private void Move()
     {
-        if (Input.GetKey(up))
+        if (Input.GetKey(up) && GetComponent<Rigidbody2D>().velocity.y < 50)
         {
-            rb.velocity = new Vector2(rb.velocity.x, vert.y); // moving up
+            GetComponent<Rigidbody2D>().AddForce(vert);
+            GetComponent<Rigidbody2D>().drag = 0;
         }
-        if (Input.GetKeyUp(up))
+        if (Input.GetKey(down) && GetComponent<Rigidbody2D>().velocity.y > -50)
         {
-            rb.velocity = Vector3.zero;
+            GetComponent<Rigidbody2D>().AddForce(-vert); // moving down
+            GetComponent<Rigidbody2D>().drag = 0;
         }
-        if (Input.GetKey(down))
+        if (Input.GetKey(left) && GetComponent<Rigidbody2D>().velocity.x > -50)
         {
-            rb.velocity = new Vector2(rb.velocity.x, -vert.y); // moving down
+            GetComponent<Rigidbody2D>().AddForce(-horz); // moving left
+            GetComponent<Rigidbody2D>().drag = 0;
         }
-        if (Input.GetKeyUp(down))
+        if (Input.GetKey(right) && GetComponent<Rigidbody2D>().velocity.x < 50)
         {
-            rb.velocity = Vector3.zero;
+            GetComponent<Rigidbody2D>().AddForce(horz); // moving right
+            GetComponent<Rigidbody2D>().drag = 0;
         }
-        if (Input.GetKey(left))
+        if (Input.GetKeyUp(up) || Input.GetKeyUp(down) || Input.GetKeyUp(right) || Input.GetKeyUp(left))
         {
-            rb.velocity = new Vector2(-horz.x, rb.velocity.y); // moving left
-        }
-        if (Input.GetKeyUp(left))
-        {
-            rb.velocity = Vector3.zero;
-        }
-        if (Input.GetKey(right))
-        {
-            rb.velocity = new Vector2(horz.x, rb.velocity.y); // moving right
-        }
-        if (Input.GetKeyUp(right))
-        {
-            rb.velocity = Vector3.zero;
+            GetComponent<Rigidbody2D>().drag = 50;
         }
 
         if (HP <= -1)
@@ -114,15 +123,21 @@ public class playerController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
- 
-        if(other.gameObject.tag == "bomb explosion" || other.gameObject.tag == "rightbul" || other.gameObject.tag == "down bul" 
-           || other.gameObject.tag == "left bul" || other.gameObject.tag == "spiral bullet" || other.gameObject.tag == "enemy bullet" ||
-          other.gameObject.tag == "enemy")
-        {
-            Destroy(current_HP[HP]);
-            HP -= 1;
-            Debug.Log(HP);
+        if (canHit == true)
+        {  
+            if (other.gameObject.tag == "bomb explosion" || other.gameObject.tag == "rightbul" || other.gameObject.tag == "down bul"
+          || other.gameObject.tag == "left bul" || other.gameObject.tag == "spiral bullet" || other.gameObject.tag == "enemy bullet" ||
+                other.gameObject.tag == "enemy" || other.gameObject.tag == "missile" || other.gameObject.tag == "missile2")
+            {
+                Destroy(current_HP[HP]);
+                HP -= 1;
+                Debug.Log(HP);
+                GetComponent<flashingscript>().on = true;
+                canHit = false;
+
+            }
         }
+       
         if (other.gameObject.tag == "thrown")
         {
             Destroy(gameObject);
