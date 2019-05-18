@@ -1611,7 +1611,7 @@ MonoBehaviour:
   spawn: {x: 0, y: 0}
   timer: 0
   cooldown: 0
-  gametime: 130
+  gametime: 0
   urpos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   HP: 0
@@ -2606,7 +2606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1417027776
 MonoBehaviour:
   m_ObjectHideFlags: 0
