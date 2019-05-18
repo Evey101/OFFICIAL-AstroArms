@@ -39,6 +39,7 @@ public class playerbulletscript : MonoBehaviour
         {
             GameObject.Find("SHIPS").GetComponent<shipscript>().shieldhp -= 1;
             Destroy(gameObject);
+
         }
     }
 

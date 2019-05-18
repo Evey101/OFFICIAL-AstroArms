@@ -15,10 +15,12 @@ public class bullet_move : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        //rb.velocity = new Vector2(-25, 0);
+        //rb.velocity = new Vector2(25, 0);
         //rb.AddForce(transform.forward, ForceMode2D.Impulse);
-        //transform.Translate(.1f, 0, 0);
-        rb.AddRelativeForce(new Vector2(5, 0));
+        transform.Translate(Vector3.up * Time.deltaTime * 7);
+        //rb.AddRelativeForce(new Vector2(0,5));
+        //gameObject.transform.TransformDirection(Vector3.right);\
+        // transform.Translate(Vector3.up * Time.deltaTime);
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -33,14 +33,14 @@ public class grabbingscript : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(Input.GetKey(KeyCode.Space))
-        {
-            GetComponent<BoxCollider2D>().enabled = false;
-        }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            GetComponent<BoxCollider2D>().enabled = true;
-        }
+        //if(Input.GetKey(KeyCode.Space))
+        //{
+        //    GetComponent<BoxCollider2D>().enabled = false;
+        //}
+        //if (Input.GetKey(KeyCode.Space))
+        //{
+        //    GetComponent<BoxCollider2D>().enabled = true;
+        //}
 
         if(collision.gameObject.tag == "vanilla enemy")
         {
@@ -68,6 +68,19 @@ public class grabbingscript : MonoBehaviour
                 Debug.Log("freeee");
                 collision.gameObject.GetComponent<trianglescript>().free = 3;
                 collision.gameObject.GetComponent<trianglescript>().thrown = true;
+            }
+        }
+        if(collision.gameObject.tag == "spiral enemy")
+        {
+            if (collision.gameObject.GetComponent<spiral_dude_behavior>().let_go_counter == 1 && Can_Grab == true)
+            {
+                collision.gameObject.GetComponent<spiral_dude_behavior>().free = 2;
+                Can_Grab = false;
+            }
+            if (collision.gameObject.GetComponent<spiral_dude_behavior>().let_go_counter == 2)
+            {
+                Debug.Log("freeee");
+                collision.gameObject.GetComponent<spiral_dude_behavior>().free = 3;
             }
         }
     }

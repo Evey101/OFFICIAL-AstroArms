@@ -51,18 +51,18 @@ public class playerController : MonoBehaviour
         //}
         if(Input.GetKey(KeyCode.Space))
         {
-            anim.Play("hold animation");
+            anim.Play("holding final anim");
         }
         if(Input.GetKeyUp(KeyCode.Space))
         {
-            anim.Play("grabbing animation");    
+            anim.Play("thowing animation");    
         }
         if (Input.GetKey(attack))
         {
             cooldown += Time.deltaTime;
             if (cooldown >= .1f)
             {
-                Instantiate(bullet, gameObject.transform.position, Quaternion.identity);
+                Instantiate(bullet, gameObject.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
                 cooldown = 0;
             }
         }
