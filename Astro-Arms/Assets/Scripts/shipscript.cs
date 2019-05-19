@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class shipscript : MonoBehaviour
 {
-    public int hp, shieldhp, tries, phase;
+    public int shieldhp, tries, phase;
     public Vector2 speed, down;
-    public float timer, shottime, bulletime, starttime;
-    public GameObject bullet, mtype1, mtype2, shield,
+    public Color transp;
+    public float hp, timer, shottime, bulletime, starttime, deadtime;
+    public GameObject bullet, mtype1, mtype2, shield, explosion,
     b1, b2, b3, b4, b5, b6, b7, excircle;
     public List<Sprite> shipsprites;
     public SpriteRenderer sr;
@@ -19,6 +21,8 @@ public class shipscript : MonoBehaviour
     public GameObject energy;
     public GameObject laser;
     public int start;
+    public Image hpbar;
+    public Image hpbar2;
     public enum Status
     {
         phase0,
@@ -33,7 +37,7 @@ public class shipscript : MonoBehaviour
     void Start()
     {
         phase = 0;
-        hp = 300;
+        hp = 600;
         shieldhp = 100;
         mode = 0;
         timer = 0;
@@ -45,16 +49,25 @@ public class shipscript : MonoBehaviour
         down = new Vector2(0, -.2f);
         start = 5;
         myStatus = Status.phase0;
+        explosion.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            myStatus = Status.dead;
+        }
+        hpbar.GetComponent<Image>().fillAmount = hp / 600;
+        hpbar2.GetComponent<Image>().fillAmount = hp / 600;
+        Debug.Log("hp normalized is: " + hp / 600);
         //Debug.Log("Current Status: " + myStatus); 
         switch(myStatus)
         {
             case Status.phase0:
                 PhaseZeroFunction();
+                //hpbar.gameObject.SetActive(true);
                 break;
             case Status.phase1:
                 PhaseOneFunction();
@@ -63,7 +76,7 @@ public class shipscript : MonoBehaviour
                 PhaseTwoFunction();
                 break;
             case Status.dead:
-                SceneManager.LoadScene("Win Screen");
+                DeadBoss();
                 break;
         }
 
@@ -100,6 +113,8 @@ public class shipscript : MonoBehaviour
         {
             starttime += Time.deltaTime;
             start = 0;
+            hpbar.gameObject.SetActive(true);
+            hpbar2.gameObject.SetActive(true);
         }
 
         if (start == 0 && starttime < 5)
@@ -124,18 +139,20 @@ public class shipscript : MonoBehaviour
     {
         //Debug.Log("Phase 1 in action");
 
-        if (shieldhp < 0)
+        if (hp < 500)
         {
             Destroy(shield);
             sr.sprite = shipsprites[1];
+            hpbar.GetComponent<Image>().color = Color.yellow;
+            hpbar2.GetComponent<Image>().color = Color.yellow;
         }
-        if (hp < 0)
+        if (hp < 300)
         {
             tries = 0;
             shottime = 0;
             shots = 0;
             bulletime = 0;
-            hp = 200;
+           
             mode = 0;
             myStatus = Status.phase2;
         }
@@ -224,7 +241,8 @@ public class shipscript : MonoBehaviour
     {
         //Debug.Log("Phase 2 in action");
         sr.sprite = shipsprites[2];
-
+        hpbar.GetComponent<Image>().color = Color.red;
+        hpbar2.GetComponent<Image>().color = Color.red;
         if (mode == 0)
         {
             Debug.Log("for the love of god please help me");
@@ -293,5 +311,27 @@ public class shipscript : MonoBehaviour
             }
         }
 
+    }
+
+    void DeadBoss ()
+    {
+        deadtime += Time.deltaTime;
+        if (deadtime < 3)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, -5);
+            transform.Rotate(0, 0, .5f);
+        }
+        if (deadtime > 3 && deadtime < 5)
+        {
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            transform.position = new Vector3(0, 100, 0);
+            transform.Rotate(0, 0, 0);
+            explosion.gameObject.SetActive(true);
+            explosion.transform.localScale += new Vector3(2, 2, 1);
+        }
+        if (deadtime > 5)
+        {
+            explosion.gameObject.SetActive(false);
+        }
     }
 }
