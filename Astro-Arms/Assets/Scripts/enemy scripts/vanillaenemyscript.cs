@@ -6,7 +6,7 @@ public class vanillaenemyscript : MonoBehaviour
 {
     public Vector2 speed;
     public bool free, die;
-    public GameObject grabber;
+    public GameObject grabber, Player;
     public Vector3 grabberpos;
     public grabbing grabbing_script;
     public int let_go_counter;
@@ -16,6 +16,7 @@ public class vanillaenemyscript : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+        GameObject.Find("player");
         speed = new Vector2(0,-16);
         free = true;
         grabbing_script = FindObjectOfType<grabbing>();
@@ -24,32 +25,31 @@ public class vanillaenemyscript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        grabberpos = GameObject.FindGameObjectWithTag("grabber").transform.position;
-        if (free == true)
+        if (GameObject.Find("player").GetComponent<playerController>().pause == false)
         {
-            GetComponent<Rigidbody2D>().velocity = speed;
-        }
-        else
-        {
-            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            transform.position = grabberpos;
+            grabberpos = GameObject.FindGameObjectWithTag("grabber").transform.position;
+            if (free == true)
+            {
+                GetComponent<Rigidbody2D>().velocity = speed;
+            }
+            else
+            {
+                GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                transform.position = grabberpos;
+            }
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                let_go_counter = 1;
+
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                let_go_counter = 2;
+                // gameObject.tag = "thrown";
+            }
         }
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            let_go_counter = 1;
-
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            let_go_counter = 2;
-           // gameObject.tag = "thrown";
-        }
-
-        if (dtime > 1)
-        {
-            Destroy(gameObject);
-        }
 	}
 
     void OnTriggerEnter2D(Collider2D collision)

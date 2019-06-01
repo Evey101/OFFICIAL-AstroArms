@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 50831928286386742}
   - component: {fileID: 61467286909137082}
   - component: {fileID: 95357201466007816}
+  - component: {fileID: 114517974253479562}
   m_Layer: 0
   m_Name: cannon_enemy rotate around
   m_TagString: enemy
@@ -183,6 +184,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114517974253479562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1127532357745728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8aea8478025452f9116ca8c050f2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DropTheHealth: 0
+  enemyDead: 0
+  healthBox: {fileID: 1610903868075240, guid: 80c9cd24c2858494b8f4c9f02a7e1a53, type: 2}
 --- !u!114 &114903257425870608
 MonoBehaviour:
   m_ObjectHideFlags: 1

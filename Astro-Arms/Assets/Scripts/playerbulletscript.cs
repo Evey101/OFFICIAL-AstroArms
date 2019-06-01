@@ -16,7 +16,11 @@ public class playerbulletscript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        GetComponent<Rigidbody2D>().velocity = speed;
+        if (GameObject.Find("player").GetComponent<playerController>().pause == false)
+        {
+
+            GetComponent<Rigidbody2D>().velocity = speed;
+        }
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)

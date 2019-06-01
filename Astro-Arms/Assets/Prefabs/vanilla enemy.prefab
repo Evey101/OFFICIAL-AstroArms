@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50590615876735940}
   - component: {fileID: 114230957145815428}
   - component: {fileID: 95515725926478036}
+  - component: {fileID: 114946645711933758}
   m_Layer: 0
   m_Name: vanilla enemy
   m_TagString: vanilla enemy
@@ -148,6 +149,20 @@ MonoBehaviour:
   grabbing_script: {fileID: 0}
   let_go_counter: 0
   dtime: 0
+--- !u!114 &114946645711933758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1653218394372682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8aea8478025452f9116ca8c050f2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DropTheHealth: 0
+  enemyDead: 0
+  healthBox: {fileID: 1610903868075240, guid: 80c9cd24c2858494b8f4c9f02a7e1a53, type: 2}
 --- !u!212 &212371553505742156
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -3,9 +3,20 @@
     // Update is called once per frame
     void Update()
     {
+        if (GameObject.Find("player").GetComponent<playerController>().pause == false)         {
 
-        if (gameObject.tag == "rightbul") // bullets are tagged appropriately so they each do their own action
-        {             GetComponent<Rigidbody2D>().velocity = new Vector3(3, -10);         }         else if (gameObject.tag == "down bul")         {             GetComponent<Rigidbody2D>().velocity = new Vector3(0, -10);         }         else if (gameObject.tag == "left bul")         {             GetComponent<Rigidbody2D>().velocity = new Vector3(-3, -10);         }
+            if (gameObject.tag == "rightbul") // bullets are tagged appropriately so they each do their own action
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector3(3, -10);
+            }
+            else if (gameObject.tag == "down bul")
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector3(0, -10);
+            }
+            else if (gameObject.tag == "left bul")
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector3(-3, -10);
+            }         }
         //if (mode == 0 || mode == 2 || mode == 4) // when the ship is facing downwards
         //{
 

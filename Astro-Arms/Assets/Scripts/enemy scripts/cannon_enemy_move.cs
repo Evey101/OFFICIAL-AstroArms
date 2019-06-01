@@ -8,7 +8,7 @@ public class cannon_enemy_move : MonoBehaviour
     public bool isleft;
     public Vector3 rotation;
     public GameObject point;
-    public GameObject bomb;
+    public GameObject bomb, Player;
     public bool start_shooting;
     public float timer, dtime;
     public int hp;
@@ -19,40 +19,46 @@ public class cannon_enemy_move : MonoBehaviour
     {
         free = true;
         hp = 2;
+        Player = GameObject.Find("player");
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        if (hp == 0)
+        if (Player.GetComponent<playerController>().pause == false)
         {
-            dtime += Time.deltaTime;
-            GetComponent<Animator>().Play("death explosion");
-            GameObject.Find("enemy spawner").GetComponent<GameManagerScript>().enemyDied += 1;
-            GameObject.Find("player").GetComponent<playerController>().score += 1000 * GameObject.Find("player").GetComponent<playerController>().multiplier;
-            GameObject.Find("player").GetComponent<playerController>().multibar += 1;
-            Destroy(gameObject);
-        }
-     
-        if(free == true)
-        {
-            rotation = transform.eulerAngles;
-            Vector3 dir = Quaternion.AngleAxis(rotation.z, Vector3.forward) * Vector3.forward;
-            transform.Rotate(dir);
-            transform.RotateAround(point.transform.position, Vector3.forward, 40 * Time.deltaTime);
-
-            if (start_shooting == true)
+            if (hp == 0)
             {
-                timer += Time.deltaTime;
+                dtime += Time.deltaTime;
+                GetComponent<Animator>().Play("death explosion");
+                GameObject.Find("enemy spawner").GetComponent<GameManagerScript>().enemyDied += 1;
+                GameObject.Find("player").GetComponent<playerController>().score += 1000 * GameObject.Find("player").GetComponent<playerController>().multiplier;
+                GameObject.Find("player").GetComponent<playerController>().multibar += 1;
+                Destroy(gameObject);
             }
-            if (timer >= .8f)
+
+            if (free == true)
             {
-                Instantiate(bomb, transform.position, Quaternion.identity);
-                timer = 0;
-               // Debug.Log("spwned bomb");
+                rotation = transform.eulerAngles;
+                Vector3 dir = Quaternion.AngleAxis(rotation.z, Vector3.forward) * Vector3.forward;
+                transform.Rotate(dir);
+                transform.RotateAround(point.transform.position, Vector3.forward, 40 * Time.deltaTime);
+
+                if (start_shooting == true)
+                {
+                    timer += Time.deltaTime;
+                }
+                if (timer >= .8f)
+                {
+                    Instantiate(bomb, transform.position, Quaternion.identity);
+                    timer = 0;
+                    // Debug.Log("spwned bomb");
+                }
             }
+
         }
 
+       
 
 	}
 

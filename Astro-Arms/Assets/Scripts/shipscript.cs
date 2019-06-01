@@ -18,7 +18,7 @@ public class shipscript : MonoBehaviour
     public int shots;
     public bool explode;
     public List<Vector2> spawns;
-    public GameObject energy;
+    public GameObject energy, player;
     public GameObject laser;
     public int start;
     public Image hpbar;
@@ -56,56 +56,56 @@ public class shipscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (player.GetComponent<playerController>().pause == false)
         {
-            myStatus = Status.dead;
-        }
-        hpbar.GetComponent<Image>().fillAmount = hp / 600;
-        hpbar2.GetComponent<Image>().fillAmount = hp / 600;
-        //Debug.Log("hp normalized is: " + hp / 600);
-        //Debug.Log("Current Status: " + myStatus); 
-        switch(myStatus)
-        {
-            case Status.phase0:
-                PhaseZeroFunction();
-                //hpbar.gameObject.SetActive(true);
-                break;
-            case Status.phase1:
-                PhaseOneFunction();
-                break;
-            case Status.phase2:
-                PhaseTwoFunction();
-                break;
-            case Status.dead:
-                DeadBoss();
-                break;
-        }
 
-        if (myStatus == Status.phase1 || myStatus == Status.phase2)
-        {
-            timer += Time.deltaTime;
-            if (timer > 1)
+            hpbar.GetComponent<Image>().fillAmount = hp / 600;
+            hpbar2.GetComponent<Image>().fillAmount = hp / 600;
+            //Debug.Log("hp normalized is: " + hp / 600);
+            //Debug.Log("Current Status: " + myStatus); 
+            switch (myStatus)
             {
-                GetComponent<Rigidbody2D>().velocity = speed;
-                //Debug.Log("going right");
+                case Status.phase0:
+                    PhaseZeroFunction();
+                    //hpbar.gameObject.SetActive(true);
+                    break;
+                case Status.phase1:
+                    PhaseOneFunction();
+                    break;
+                case Status.phase2:
+                    PhaseTwoFunction();
+                    break;
+                case Status.dead:
+                    DeadBoss();
+                    break;
             }
-            if (timer < 1)
-            {
-                GetComponent<Rigidbody2D>().velocity = -speed;
-                //Debug.Log("going left");
-            }
-            if (timer >= 2)
-            {
-                timer = 0;
-            }
-        }
-       
-        if (Input.GetKeyDown(KeyCode.G) && myStatus == Status.phase1)
-        {
-            shieldhp = -1;
-            hp = -1;
-        }
 
+            if (myStatus == Status.phase1 || myStatus == Status.phase2)
+            {
+                timer += Time.deltaTime;
+                if (timer > 1)
+                {
+                    GetComponent<Rigidbody2D>().velocity = speed;
+                    //Debug.Log("going right");
+                }
+                if (timer < 1)
+                {
+                    GetComponent<Rigidbody2D>().velocity = -speed;
+                    //Debug.Log("going left");
+                }
+                if (timer >= 2)
+                {
+                    timer = 0;
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.G) && myStatus == Status.phase1)
+            {
+                shieldhp = -1;
+                hp = -1;
+            }
+
+        }
     }
 
     void PhaseZeroFunction() 
