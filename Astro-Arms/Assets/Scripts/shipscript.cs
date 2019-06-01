@@ -23,6 +23,7 @@ public class shipscript : MonoBehaviour
     public int start;
     public Image hpbar;
     public Image hpbar2;
+
     public enum Status
     {
         phase0,
@@ -61,7 +62,7 @@ public class shipscript : MonoBehaviour
         }
         hpbar.GetComponent<Image>().fillAmount = hp / 600;
         hpbar2.GetComponent<Image>().fillAmount = hp / 600;
-        Debug.Log("hp normalized is: " + hp / 600);
+        //Debug.Log("hp normalized is: " + hp / 600);
         //Debug.Log("Current Status: " + myStatus); 
         switch(myStatus)
         {
@@ -107,9 +108,9 @@ public class shipscript : MonoBehaviour
 
     }
 
-    void PhaseZeroFunction()
+    void PhaseZeroFunction() 
     {
-        if (GameObject.Find("player").GetComponent<playerController>().gametime >= 133)
+        if (GameObject.Find("enemy spawner").GetComponent<GameManagerScript>().enemyDied == 61)
         {
             starttime += Time.deltaTime;
             start = 0;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public int mode;
+    public int mode, enemyDied;
 
     [System.Serializable]
     public class WaveSpecs

@@ -19,15 +19,21 @@ public class bomb_move : MonoBehaviour
         timer += Time.deltaTime;
 
         rb.velocity = new Vector2(0, -10);
+        if (timer < 1)
+        {
+            GetComponent<Animator>().Play("bomb blinking");
+        }
 
         if (timer >= 1)
         {
-            GetComponent<SpriteRenderer>().color = new Vector4(255, 0, 0, 255);
-            transform.localScale = new Vector3(6, 6, 6);
+            //GetComponent<SpriteRenderer>().color = new Vector4(255, 0, 0, 255);
+            //transform.localScale = new Vector3(6, 6, 6);
             rb.velocity = new Vector2(0, -1);
-            gameObject.tag = "bomb explosion";
+            //gameObject.tag = "bomb explosion";
+            GetComponent<Animator>().Play("bomb explosion");
         }
         Destroy(gameObject, 4f);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

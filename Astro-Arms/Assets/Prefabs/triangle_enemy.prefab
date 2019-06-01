@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114236725397266290}
   - component: {fileID: 60622429932190932}
   - component: {fileID: 50074398864303314}
+  - component: {fileID: 95718687623796592}
   m_Layer: 0
   m_Name: triangle_enemy
   m_TagString: triangle enemy
@@ -90,6 +91,24 @@ PolygonCollider2D:
     - - {x: 0, y: 0.5}
       - {x: -0.4330127, y: -0.25000003}
       - {x: 0.43301272, y: -0.24999996}
+--- !u!95 &95718687623796592
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304032942466600}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3f832f0154b4c4c3f8a64dd2f86e81b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114236725397266290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -106,6 +125,7 @@ MonoBehaviour:
   stop: {x: 0, y: 0}
   go: {x: 0, y: 0}
   timer: 0
+  dtime: 0
   hurttime: 0
   gotimer: 0
   oldz: 0

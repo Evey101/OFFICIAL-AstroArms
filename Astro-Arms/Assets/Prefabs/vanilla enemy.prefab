@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 60487549771905950}
   - component: {fileID: 50590615876735940}
   - component: {fileID: 114230957145815428}
+  - component: {fileID: 95515725926478036}
   m_Layer: 0
   m_Name: vanilla enemy
   m_TagString: vanilla enemy
@@ -110,6 +111,24 @@ PolygonCollider2D:
       - {x: 0.42, y: -0.45999998}
       - {x: 0.52, y: -0.24}
       - {x: 0.52, y: 0.32999998}
+--- !u!95 &95515725926478036
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1653218394372682}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3f832f0154b4c4c3f8a64dd2f86e81b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114230957145815428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,10 +142,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: {x: 0, y: 0}
   free: 0
+  die: 0
   grabber: {fileID: 1846845726509416, guid: 5616a153fc1ce4eb6a5efa417ccb482e, type: 2}
   grabberpos: {x: 0, y: 0, z: 0}
   grabbing_script: {fileID: 0}
   let_go_counter: 0
+  dtime: 0
 --- !u!212 &212371553505742156
 SpriteRenderer:
   m_ObjectHideFlags: 1

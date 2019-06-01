@@ -10,7 +10,7 @@ public class background : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-        spaceSrollSpd = new Vector2(-15 * Time.deltaTime, 0);
+        spaceSrollSpd = new Vector2(-0.5f, 0);
 	}
 	
 	// Update is called once per frame
@@ -21,12 +21,12 @@ public class background : MonoBehaviour
 
         if (spaceScrolling.transform.position.y <= -26)
         {
-            spaceScrolling.transform.position = new Vector3(0, 39.2f, 0);
+            spaceScrolling.transform.position = new Vector3(0, 37.7f, 0);
             Debug.Log("goin up");
         }
         if (spaceScrolling1.transform.position.y <= -26)
         {
-            spaceScrolling1.transform.position = new Vector3(0, 39.2f, 0);
+            spaceScrolling1.transform.position = new Vector3(0, 37.7f, 0);
             Debug.Log("goin up again");
         }
 	}

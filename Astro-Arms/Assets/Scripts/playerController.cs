@@ -9,14 +9,16 @@ public class playerController : MonoBehaviour
 {
     public KeyCode up, down, left, right, attack, grab;
     public Vector2 vert, horz, thrown, spawn;
-    public float timer, cooldown, gametime;
+    public float timer, cooldown, gametime, multibar;
     public Vector3 urpos;
     public Rigidbody2D rb;
-    public int HP;
+    public int HP, score, multiplier;
     public GameObject[] current_HP;
     public TMP_Text health;
+    public Text multi, sc;
+    public Image progressbar;
     public Animator anim;
-    public GameObject bullet;
+    public GameObject bullet, playershield, smoke;
     public grabbing grabber;
     public vanillaenemyscript vanilla_enemy_script;
     public shipscript boss_script;
@@ -24,6 +26,8 @@ public class playerController : MonoBehaviour
     public bool canHit;
     public float hittime;
     public bool changedrag;
+    public GameObject nuetral;
+    public GameObject sad;
 
     // Use this for initialization
     void Start()
@@ -37,28 +41,59 @@ public class playerController : MonoBehaviour
         anim = GetComponent<Animator>();
         GetComponent<AudioSource>().Play();
         canHit = true;
+        multiplier = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("progress bar: " + progressbar.fillAmount);
+        Debug.Log("multbar: " + multibar);
+
+        progressbar.fillAmount = multibar / 10;
+
+        if (progressbar.fillAmount == 1)
+        {
+            multiplier += 1;
+            multibar = 0;
+            progressbar.fillAmount = 0;
+        }
+
+        multi.text = "" + multiplier +"x";
+        sc.text = "" + score;
+
         timer += Time.deltaTime;
-        health.text = "HP";
+        //health.text = "HP";
         Move();
         gametime += Time.deltaTime;
-    
-        if(canHit == true)
+
+        if (canHit == true)
         {
             hittime = 0;
+            playershield.SetActive(false);
+            nuetral.SetActive(true);
+            sad.SetActive(false);
+
         }
-        if (canHit == false)
-        {
+        else{ 
+            playershield.SetActive(true);
+            nuetral.SetActive(false);
+            sad.SetActive(true);
             hittime += Time.deltaTime;
             if (hittime >= .75f)
             {
                 canHit = true;
             }
         }
+
+            if (HP < 2)
+            {
+                smoke.SetActive(true);
+            }
+            else {
+                smoke.SetActive(false);
+            }
+       
 
         //if(gametime >= 120)
         //{
@@ -131,7 +166,7 @@ public class playerController : MonoBehaviour
             {
                 Destroy(current_HP[HP]);
                 HP -= 1;
-                Debug.Log(HP);
+                //Debug.Log(HP);
                 GetComponent<flashingscript>().on = true;
                 canHit = false;
 
