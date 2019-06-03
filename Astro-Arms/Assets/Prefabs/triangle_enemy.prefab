@@ -8,15 +8,15 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
+  m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1304032942466600}
-  m_IsPrefabParent: 1
+  m_IsPrefabAsset: 1
 --- !u!1 &1304032942466600
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4952802949440868}
   - component: {fileID: 212873912288214280}
@@ -33,7 +33,7 @@ GameObject:
 --- !u!4 &4952802949440868
 Transform:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304032942466600}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
@@ -47,7 +47,7 @@ Transform:
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304032942466600}
   m_BodyType: 1
@@ -66,7 +66,7 @@ Rigidbody2D:
 --- !u!60 &60622429932190932
 PolygonCollider2D:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304032942466600}
   m_Enabled: 1
@@ -93,7 +93,7 @@ PolygonCollider2D:
 --- !u!114 &114236725397266290
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304032942466600}
   m_Enabled: 1
@@ -118,7 +118,7 @@ MonoBehaviour:
   thrown: 0
   mode: 0
   state: 0
-  hp: 3
+  hp: 7
   let_go_counter: 0
   grabberpos: {x: 0, y: 0, z: 0}
   rightbul: {fileID: 1751499262570724, guid: f5a84ec315d38420186a3f9da43143c3, type: 2}
@@ -127,7 +127,7 @@ MonoBehaviour:
 --- !u!212 &212873912288214280
 SpriteRenderer:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304032942466600}
   m_Enabled: 1
@@ -169,3 +169,4 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+  m_SpriteSortPoint: 0

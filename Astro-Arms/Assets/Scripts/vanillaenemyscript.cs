@@ -10,6 +10,7 @@ public class vanillaenemyscript : MonoBehaviour
     public Vector3 grabberpos;
     public grabbing grabbing_script;
     public int let_go_counter;
+    public int hp;
 
 
 	// Use this for initialization
@@ -44,13 +45,18 @@ public class vanillaenemyscript : MonoBehaviour
             let_go_counter = 2;
            // gameObject.tag = "thrown";
         }
+
+        if(hp <= 0)
+        {
+            Destroy(gameObject);
+        }
 	}
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "player bullet")
         {
-            Destroy(gameObject);
+            hp -= 1;
         }
         if(collision.gameObject.tag == "thrown")
         {
