@@ -6,6 +6,7 @@ public class bullet_move : MonoBehaviour
 {
     public Rigidbody2D rb;
 
+
 	// Use this for initialization
 	void Start () 
     {
@@ -17,7 +18,10 @@ public class bullet_move : MonoBehaviour
     {
         //rb.velocity = new Vector2(25, 0);
         //rb.AddForce(transform.forward, ForceMode2D.Impulse);
-        transform.Translate(Vector3.up * Time.deltaTime * 7);
+        if (GameObject.Find("player").GetComponent<playerController>().pause == false)
+        {
+            transform.Translate(Vector3.up * Time.deltaTime * 7);
+        }
         //rb.AddRelativeForce(new Vector2(0,5));
         //gameObject.transform.TransformDirection(Vector3.right);\
         // transform.Translate(Vector3.up * Time.deltaTime);

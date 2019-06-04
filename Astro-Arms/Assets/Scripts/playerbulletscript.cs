@@ -16,7 +16,11 @@ public class playerbulletscript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        GetComponent<Rigidbody2D>().velocity = speed;
+        if (GameObject.Find("player").GetComponent<playerController>().pause == false)
+        {
+
+            GetComponent<Rigidbody2D>().velocity = speed;
+        }
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,16 +29,21 @@ public class playerbulletscript : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (collision.gameObject.tag == "ship")
+        if (GameObject.Find("SHIPS").GetComponent<shipscript>().myStatus == shipscript.Status.phase1 ||
+            GameObject.Find("SHIPS").GetComponent<shipscript>().myStatus == shipscript.Status.phase2)
         {
-            GameObject.Find("SHIPS").GetComponent<shipscript>().hp -= 1;
-            Destroy(gameObject);
+            if (collision.gameObject.tag == "ship")
+            {
+                GameObject.Find("SHIPS").GetComponent<shipscript>().hp -= 1;
+                Destroy(gameObject);
+            }
+            if (collision.gameObject.tag == "weak points")
+            {
+                GameObject.Find("SHIPS").GetComponent<shipscript>().hp -= 5;
+                Destroy(gameObject);
+            }
         }
-        if (collision.gameObject.tag == "weak points")
-        {
-            GameObject.Find("SHIPS").GetComponent<shipscript>().hp -= 5;
-            Destroy(gameObject);
-        }
+     
         if (collision.gameObject.tag == "shield")
         {
             GameObject.Find("SHIPS").GetComponent<shipscript>().shieldhp -= 1;
