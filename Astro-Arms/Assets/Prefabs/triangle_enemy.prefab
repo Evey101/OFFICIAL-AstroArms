@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 50074398864303314}
   - component: {fileID: 95718687623796592}
   - component: {fileID: 114192916741244010}
+  - component: {fileID: 114910858146440312}
   m_Layer: 0
   m_Name: triangle_enemy
   m_TagString: triangle enemy
@@ -96,7 +97,7 @@ PolygonCollider2D:
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304032942466600}
   m_Enabled: 1
@@ -113,17 +114,39 @@ Animator:
 --- !u!114 &114192916741244010
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304032942466600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df8aea8478025452f9116ca8c050f2da, type: 3}
+  m_Script: {fileID: 11500000, guid: 90a6121a08ea24b88b4e19bfae30e8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DropTheHealth: 0
-  enemyDead: 0
-  healthBox: {fileID: 1610903868075240, guid: 80c9cd24c2858494b8f4c9f02a7e1a53, type: 2}
+  vert: {x: 0, y: 0}
+  horz: {x: 0, y: 0}
+  stop: {x: 0, y: 0}
+  go: {x: 0, y: 0}
+  timer: 0
+  dtime: 0
+  hurttime: 0
+  gotimer: 0
+  oldz: 0
+  turn: 0
+  right: 0
+  canMove: 0
+  canShoot: 0
+  canRotate: 0
+  free: 0
+  thrown: 0
+  mode: 0
+  state: 0
+  hp: 0
+  let_go_counter: 0
+  Player: {fileID: 0}
+  grabberpos: {x: 0, y: 0, z: 0}
+  rightbul: {fileID: 0}
+  leftbul: {fileID: 0}
+  downbul: {fileID: 0}
 --- !u!114 &114236725397266290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,6 +183,20 @@ MonoBehaviour:
   rightbul: {fileID: 1751499262570724, guid: f5a84ec315d38420186a3f9da43143c3, type: 2}
   leftbul: {fileID: 1569975878004598, guid: 3eff3b5f1c04540fca0ff21ec8add503, type: 2}
   downbul: {fileID: 1604753590419010, guid: acd04f76644314fa184184c50f78996b, type: 2}
+--- !u!114 &114910858146440312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304032942466600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30cac64be30f4c8abb23988b8934ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DropTheHealth: 0
+  enemyDead: 0
+  healthBox: {fileID: 0}
 --- !u!212 &212873912288214280
 SpriteRenderer:
   m_ObjectHideFlags: 1

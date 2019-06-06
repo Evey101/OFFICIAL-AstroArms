@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 60487549771905950}
   - component: {fileID: 50590615876735940}
   - component: {fileID: 114230957145815428}
+  - component: {fileID: 114874270058913138}
   m_Layer: 0
   m_Name: vanilla enemy
   m_TagString: vanilla enemy
@@ -118,16 +119,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1653218394372682}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46420dc61d7964cde9955420f2d45a2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 24821d9953925427eb5bc7a3e2ce8fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 0, y: 0}
   free: 0
-  grabber: {fileID: 1846845726509416, guid: 5616a153fc1ce4eb6a5efa417ccb482e, type: 2}
+  die: 0
+  grabber: {fileID: 0}
+  Player: {fileID: 0}
   grabberpos: {x: 0, y: 0, z: 0}
   grabbing_script: {fileID: 0}
   let_go_counter: 0
-  hp: 2
+  dtime: 0
+--- !u!114 &114874270058913138
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1653218394372682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30cac64be30f4c8abb23988b8934ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DropTheHealth: 0
+  enemyDead: 0
+  healthBox: {fileID: 0}
 --- !u!212 &212371553505742156
 SpriteRenderer:
   m_ObjectHideFlags: 1
