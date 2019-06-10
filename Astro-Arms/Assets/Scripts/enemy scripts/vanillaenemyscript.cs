@@ -56,14 +56,18 @@ public class vanillaenemyscript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Finish")
         {
+            GameObject.Find("enemy spawner").GetComponent<GameManagerScript>().enemyDied += 1;
             Destroy(gameObject);
         }
         if (collision.gameObject.tag == "player bullet")
         {
                 GetComponent<Animator>().Play("death explosion");
                 GameObject.Find("enemy spawner").GetComponent<GameManagerScript>().enemyDied += 1;
-                GameObject.Find("player").GetComponent<playerController>().score += 1000 * GameObject.Find("player").GetComponent<playerController>().multiplier;
-                GameObject.Find("player").GetComponent<playerController>().multibar += 1;
+                GameObject.Find("player").GetComponent<playerController>().score += 10 * GameObject.Find("player").GetComponent<playerController>().multiplier;
+            GameObject.Find("player").GetComponent<playerController>().progressbar.fillAmount += .1f;
+            GameObject.Find("player").GetComponent<playerController>().enemydied += 1;
+            GameObject.Find("player").GetComponent<playerController>().just = true;
+                Debug.Log("help me please");    
                 Destroy(gameObject);
         }
         if(collision.gameObject.tag == "thrown")

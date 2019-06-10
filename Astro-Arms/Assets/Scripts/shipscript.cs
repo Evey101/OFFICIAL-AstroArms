@@ -9,14 +9,14 @@ public class shipscript : MonoBehaviour
     public int shieldhp, tries, phase;
     public Vector2 speed, down;
     public Color transp;
-    public float hp, timer, shottime, bulletime, starttime, deadtime;
+    public float hp, timer, shottime, bulletime, starttime, deadtime, bombtime;
     public GameObject bullet, mtype1, mtype2, shield, explosion,
     b1, b2, b3, b4, b5, b6, b7, excircle;
     public List<Sprite> shipsprites;
     public SpriteRenderer sr;
     public int mode;
     public int shots;
-    public bool explode;
+    public bool explode, playsound;
     public List<Vector2> spawns;
     public GameObject energy, player;
     public GameObject laser;
@@ -322,6 +322,7 @@ public class shipscript : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, -5);
             transform.Rotate(0, 0, .5f);
         }
+
         if (deadtime > 3 && deadtime < 5)
         {
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -329,6 +330,7 @@ public class shipscript : MonoBehaviour
             transform.Rotate(0, 0, 0);
             explosion.gameObject.SetActive(true);
             explosion.transform.localScale += new Vector3(2, 2, 1);
+        
         }
         if (deadtime > 5)
         {

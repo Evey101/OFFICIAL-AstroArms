@@ -47,13 +47,13 @@ public class GameManagerScript : MonoBehaviour
             if (timePassing > enemyWave[i].beginningTime && timeB4Start <= 0)
             {
                 GOholderForOtherElements = Instantiate(enemyWave[i].EnemyType, enemyWave[i].spawnPosition, Quaternion.Euler(enemyWave[i].spawnRotation));
-                if (enemyWave[i].scaling == new Vector3(0, 0, 0))
-                {
-                    enemyWave[i].scaling = new Vector3(2, 2, 2);
-                }
-                GOholderForOtherElements.transform.localScale = enemyWave[i].scaling;
+                //if (enemyWave[i].scaling == new Vector3(0, 0, 0))
+                //{
+                //    enemyWave[i].scaling = new Vector3(2, 2, 2);
+                //}
+                //GOholderForOtherElements.transform.localScale = enemyWave[i].scaling;
                 enemyWave[i].HD = GOholderForOtherElements.GetComponent<HealthDrop>();
-                enemyWave[i].HD.DropTheHealth = enemyWave[i].DropHealthPack;
+                //enemyWave[i].HD.DropTheHealth = enemyWave[i].DropHealthPack;
 
                 enemyWave.RemoveAt(i);
             }

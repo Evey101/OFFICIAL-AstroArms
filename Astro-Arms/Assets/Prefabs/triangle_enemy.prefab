@@ -6,26 +6,44 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: rightbul
+      value: 
+      objectReference: {fileID: 1751499262570724, guid: f5a84ec315d38420186a3f9da43143c3,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: downbul
+      value: 
+      objectReference: {fileID: 1604753590419010, guid: acd04f76644314fa184184c50f78996b,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: leftbul
+      value: 
+      objectReference: {fileID: 1569975878004598, guid: 3eff3b5f1c04540fca0ff21ec8add503,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: hp
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
+  m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1304032942466600}
-  m_IsPrefabAsset: 1
+  m_IsPrefabParent: 0
 --- !u!1 &1304032942466600
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
+  serializedVersion: 5
   m_Component:
   - component: {fileID: 4952802949440868}
   - component: {fileID: 212873912288214280}
-  - component: {fileID: 114236725397266290}
   - component: {fileID: 60622429932190932}
   - component: {fileID: 50074398864303314}
   - component: {fileID: 95718687623796592}
   - component: {fileID: 114192916741244010}
-  - component: {fileID: 114910858146440312}
   m_Layer: 0
   m_Name: triangle_enemy
   m_TagString: triangle enemy
@@ -36,7 +54,7 @@ GameObject:
 --- !u!4 &4952802949440868
 Transform:
   m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304032942466600}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
@@ -50,7 +68,7 @@ Transform:
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304032942466600}
   m_BodyType: 1
@@ -69,7 +87,7 @@ Rigidbody2D:
 --- !u!60 &60622429932190932
 PolygonCollider2D:
   m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304032942466600}
   m_Enabled: 1
@@ -97,7 +115,7 @@ PolygonCollider2D:
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304032942466600}
   m_Enabled: 1
@@ -114,7 +132,7 @@ Animator:
 --- !u!114 &114192916741244010
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304032942466600}
   m_Enabled: 1
@@ -140,67 +158,17 @@ MonoBehaviour:
   thrown: 0
   mode: 0
   state: 0
-  hp: 0
-  let_go_counter: 0
-  Player: {fileID: 0}
-  grabberpos: {x: 0, y: 0, z: 0}
-  rightbul: {fileID: 0}
-  leftbul: {fileID: 0}
-  downbul: {fileID: 0}
---- !u!114 &114236725397266290
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1304032942466600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d849aa4c774074f12989342d73be5da1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vert: {x: 0, y: 0}
-  horz: {x: 0, y: 0}
-  stop: {x: 0, y: 0}
-  go: {x: 0, y: 0}
-  timer: 0
-  dtime: 0
-  hurttime: 0
-  gotimer: 0
-  oldz: 0
-  turn: 0
-  right: 0
-  canMove: 0
-  canShoot: 0
-  canRotate: 0
-  free: 0
-  thrown: 0
-  mode: 0
-  state: 0
-  hp: 7
+  hp: 2
   let_go_counter: 0
   Player: {fileID: 0}
   grabberpos: {x: 0, y: 0, z: 0}
   rightbul: {fileID: 1751499262570724, guid: f5a84ec315d38420186a3f9da43143c3, type: 2}
   leftbul: {fileID: 1569975878004598, guid: 3eff3b5f1c04540fca0ff21ec8add503, type: 2}
   downbul: {fileID: 1604753590419010, guid: acd04f76644314fa184184c50f78996b, type: 2}
---- !u!114 &114910858146440312
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1304032942466600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c30cac64be30f4c8abb23988b8934ca4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DropTheHealth: 0
-  enemyDead: 0
-  healthBox: {fileID: 0}
 --- !u!212 &212873912288214280
 SpriteRenderer:
   m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304032942466600}
   m_Enabled: 1
@@ -242,4 +210,3 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0

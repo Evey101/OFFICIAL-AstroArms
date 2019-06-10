@@ -5,7 +5,7 @@ using UnityEngine;
 public class newbgscript : MonoBehaviour
 {
 
-    float scrollSpeed = 0.5f;
+    float scrollSpeed = -0.5f;
     Renderer rend;
 
     void Start()
@@ -16,6 +16,6 @@ public class newbgscript : MonoBehaviour
     void Update()
     {
         float offset = Time.time * scrollSpeed;
-        rend.material.SetTextureOffset("_MainTex", new Vector2(offset, 0));
+        rend.material.SetTextureOffset("_MainTex", new Vector2(0, offset));
     }
 }

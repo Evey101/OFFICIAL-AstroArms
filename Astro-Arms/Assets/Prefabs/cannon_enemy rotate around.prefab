@@ -6,23 +6,39 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: point
+      value: 
+      objectReference: {fileID: 1127532357745728}
+    - target: {fileID: 0}
+      propertyPath: bomb
+      value: 
+      objectReference: {fileID: 1665156234486984, guid: b4005269ab4c143f191a8a7642c5f8d2,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: hp
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3f832f0154b4c4c3f8a64dd2f86e81b0, type: 2}
+    m_RemovedComponents:
+    - {fileID: 0}
+  m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1127532357745728}
-  m_IsPrefabAsset: 1
+  m_IsPrefabParent: 0
 --- !u!1 &1127532357745728
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
+  serializedVersion: 5
   m_Component:
   - component: {fileID: 4029307885409216}
   - component: {fileID: 50831928286386742}
   - component: {fileID: 61467286909137082}
-  - component: {fileID: 95357201466007816}
-  - component: {fileID: 114402738102872574}
   m_Layer: 0
   m_Name: cannon_enemy rotate around
   m_TagString: enemy
@@ -33,15 +49,16 @@ GameObject:
 --- !u!1 &1554372726734730
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
+  serializedVersion: 5
   m_Component:
   - component: {fileID: 4456147860057358}
   - component: {fileID: 212751044984163722}
   - component: {fileID: 61415907222682714}
   - component: {fileID: 50240890779686382}
-  - component: {fileID: 114903257425870608}
+  - component: {fileID: 114451924466568250}
+  - component: {fileID: 95165130171588188}
   m_Layer: 0
   m_Name: cannon enemy
   m_TagString: cannon enemy
@@ -52,7 +69,7 @@ GameObject:
 --- !u!4 &4029307885409216
 Transform:
   m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1127532357745728}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
@@ -66,7 +83,7 @@ Transform:
 --- !u!4 &4456147860057358
 Transform:
   m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1554372726734730}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
@@ -80,7 +97,7 @@ Transform:
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1554372726734730}
   m_BodyType: 0
@@ -100,7 +117,7 @@ Rigidbody2D:
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1127532357745728}
   m_BodyType: 0
@@ -119,7 +136,7 @@ Rigidbody2D:
 --- !u!61 &61415907222682714
 BoxCollider2D:
   m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1554372726734730}
   m_Enabled: 1
@@ -144,7 +161,7 @@ BoxCollider2D:
 --- !u!61 &61467286909137082
 BoxCollider2D:
   m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1127532357745728}
   m_Enabled: 1
@@ -166,13 +183,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!95 &95357201466007816
+--- !u!95 &95165130171588188
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1127532357745728}
+  m_GameObject: {fileID: 1554372726734730}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3f832f0154b4c4c3f8a64dd2f86e81b0, type: 2}
@@ -184,45 +201,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114402738102872574
+--- !u!114 &114451924466568250
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1127532357745728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c30cac64be30f4c8abb23988b8934ca4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DropTheHealth: 0
-  enemyDead: 0
-  healthBox: {fileID: 0}
---- !u!114 &114903257425870608
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1554372726734730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3239488c5fad43ebb82e1e01eaf2fc3, type: 3}
+  m_Script: {fileID: 11500000, guid: 68733e45dc5034c8b85695953fe1e221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 50240890779686382}
+  rb: {fileID: 0}
   isleft: 0
   rotation: {x: 0, y: 0, z: 0}
   point: {fileID: 1127532357745728}
   bomb: {fileID: 1665156234486984, guid: b4005269ab4c143f191a8a7642c5f8d2, type: 2}
+  Player: {fileID: 0}
   start_shooting: 0
   timer: 0
   dtime: 0
-  hp: 40
+  hp: 2
   free: 0
 --- !u!212 &212751044984163722
 SpriteRenderer:
   m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1554372726734730}
   m_Enabled: 1
@@ -264,4 +268,3 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0

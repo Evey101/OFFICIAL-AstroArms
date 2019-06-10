@@ -9,14 +9,15 @@ public class playerController : MonoBehaviour
 {
     public KeyCode up, down, left, right, attack, grab;
     public Vector2 vert, horz, thrown, spawn;
-    public float timer, cooldown, gametime, multibar;
+    public float rlMove, udMove;
+    public float timer, cooldown, gametime, multibar, finaltimer;
     public Vector3 urpos;
     public Rigidbody2D rb;
-    public int HP, score, multiplier;
+    public int HP, score, multiplier, enemydied;
     public GameObject[] current_HP;
     public TMP_Text health;
     public Text multi, sc;
-    public Image progressbar;
+    public Image progressbar, scoredisplay;
     public Animator anim;
     public GameObject bullet, playershield, smoke;
     public grabbing grabber;
@@ -29,14 +30,15 @@ public class playerController : MonoBehaviour
     public GameObject pauseScrn;
     public GameObject nuetral;
     public GameObject sad;
+    public bool just;
 
 
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        vert = new Vector2(0, 50f); // up and down speed
-        horz = new Vector2(50f, 0); // left and right speed
+        vert = new Vector2(0, 10f); // up and down speed
+        horz = new Vector2(10f, 0); // left and right speed
         thrown = new Vector2(0, .5f); // this speed of 
         HP = 4;
         cooldown = 0;
@@ -45,6 +47,8 @@ public class playerController : MonoBehaviour
         canHit = true;
         multiplier = 1;
         pauseScrn.SetActive(false);
+        progressbar.fillAmount = 0;
+        scoredisplay.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -77,12 +81,10 @@ public class playerController : MonoBehaviour
 
         if (pause == false)
         {
-            progressbar.fillAmount = multibar / 10;
-
-            if (progressbar.fillAmount == 1)
+            
+            if (progressbar.fillAmount == 1 && multiplier < 5)
             {
                 multiplier += 1;
-                multibar = 0;
                 progressbar.fillAmount = 0;
             }
 
@@ -114,7 +116,7 @@ public class playerController : MonoBehaviour
                 }
             }
 
-            if (HP < 2)
+            if (HP < 3)
             {
                 smoke.SetActive(true);
             }
@@ -123,7 +125,14 @@ public class playerController : MonoBehaviour
                 smoke.SetActive(false);
             }
 
-
+            if (boss.GetComponent<shipscript>().myStatus == shipscript.Status.dead)
+            {
+                finaltimer += Time.deltaTime;
+            }
+            if (finaltimer >= 5)
+            {
+                scoredisplay.gameObject.SetActive(true);
+            }
             //if(gametime >= 120)
             //{
             //    boss_script.phase = 0;
@@ -155,31 +164,47 @@ public class playerController : MonoBehaviour
         }
         private void Move()
         {
-            if (Input.GetKey(up) && GetComponent<Rigidbody2D>().velocity.y < 50)
+            if (Input.GetKey(up))
             {
-                GetComponent<Rigidbody2D>().AddForce(vert);
-                GetComponent<Rigidbody2D>().drag = 0;
+            //GetComponent<Rigidbody2D>().velocity = vert;
+            udMove = 15;
             }
-            if (Input.GetKey(down) && GetComponent<Rigidbody2D>().velocity.y > -50)
+        if (Input.GetKeyUp(up))
+        {
+            //GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            udMove = 0;
+        }
+            if (Input.GetKey(down))
             {
-                GetComponent<Rigidbody2D>().AddForce(-vert); // moving down
-                GetComponent<Rigidbody2D>().drag = 0;
+            //GetComponent<Rigidbody2D>().velocity = -vert; // moving down
+            udMove = -15f;
             }
-            if (Input.GetKey(left) && GetComponent<Rigidbody2D>().velocity.x > -50)
+        if (Input.GetKeyUp(down))
+        {
+            //GetComponent<Rigidbody2D>().velocity = Vector2.zero;// moving down
+            udMove = 0;
+        }
+            if (Input.GetKey(left))
             {
-                GetComponent<Rigidbody2D>().AddForce(-horz); // moving left
-                GetComponent<Rigidbody2D>().drag = 0;
+            //GetComponent<Rigidbody2D>().velocity = -horz; // moving left
+            rlMove = -15f;
             }
-            if (Input.GetKey(right) && GetComponent<Rigidbody2D>().velocity.x < 50)
+        if (Input.GetKeyUp(left))
+        {
+            //GetComponent<Rigidbody2D>().velocity = Vector2.zero; // moving left
+            rlMove = 0;
+        }
+            if (Input.GetKey(right))
             {
-                GetComponent<Rigidbody2D>().AddForce(horz); // moving right
-                GetComponent<Rigidbody2D>().drag = 0;
+            //GetComponent<Rigidbody2D>().velocity = horz; // moving righ
+            rlMove = 15f;
             }
-            if (Input.GetKeyUp(up) || Input.GetKeyUp(down) || Input.GetKeyUp(right) || Input.GetKeyUp(left))
-            {
-                GetComponent<Rigidbody2D>().drag = 50;
-            }
-
+        if (Input.GetKeyUp(right))
+        {
+            //GetComponent<Rigidbody2D>().velocity = Vector2.zero;// moving righ
+            rlMove = 0;
+        }
+        GetComponent<Rigidbody2D>().velocity = new Vector2(rlMove, udMove);
             if (HP <= -1)
             {
                 SceneManager.LoadScene(2);

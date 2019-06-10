@@ -18,7 +18,7 @@ public class cannon_enemy_move : MonoBehaviour
 	void Start () 
     {
         free = true;
-        hp = 2;
+        //hp = 2;
         Player = GameObject.Find("player");
 	}
 	
@@ -32,8 +32,11 @@ public class cannon_enemy_move : MonoBehaviour
                 dtime += Time.deltaTime;
                 GetComponent<Animator>().Play("death explosion");
                 GameObject.Find("enemy spawner").GetComponent<GameManagerScript>().enemyDied += 1;
-                GameObject.Find("player").GetComponent<playerController>().score += 1000 * GameObject.Find("player").GetComponent<playerController>().multiplier;
-                GameObject.Find("player").GetComponent<playerController>().multibar += 1;
+                GameObject.Find("player").GetComponent<playerController>().score += 10 * GameObject.Find("player").GetComponent<playerController>().multiplier;
+                GameObject.Find("player").GetComponent<playerController>().progressbar.fillAmount += .1f;
+                GameObject.Find("player").GetComponent<playerController>().enemydied += 1;
+                GameObject.Find("player").GetComponent<playerController>().just = true;
+                Debug.Log("What is going on");
                 Destroy(gameObject);
             }
 
