@@ -5395,28 +5395,10 @@ MonoBehaviour:
     DropHealthPack: 0
     HD: {fileID: 0}
     bonusHP: 0
-  - spawnPosition: {x: 1, y: 9, z: 0}
-    spawnRotation: {x: 0, y: 0, z: 0}
-    scaling: {x: 0, y: 0, z: 0}
-    beginningTime: 27
-    EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
-      type: 2}
-    DropHealthPack: 0
-    HD: {fileID: 0}
-    bonusHP: 0
-  - spawnPosition: {x: 3, y: 9, z: 0}
-    spawnRotation: {x: 0, y: 0, z: 0}
-    scaling: {x: 0, y: 0, z: 0}
-    beginningTime: 29
-    EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
-      type: 2}
-    DropHealthPack: 0
-    HD: {fileID: 0}
-    bonusHP: 0
   - spawnPosition: {x: -1, y: 19, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
-    beginningTime: 16
+    beginningTime: 27
     EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
       type: 2}
     DropHealthPack: 0
@@ -5425,7 +5407,7 @@ MonoBehaviour:
   - spawnPosition: {x: 0, y: 19, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
-    beginningTime: 17
+    beginningTime: 29
     EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
       type: 2}
     DropHealthPack: 0
@@ -5440,7 +5422,7 @@ MonoBehaviour:
     DropHealthPack: 0
     HD: {fileID: 0}
     bonusHP: 0
-  - spawnPosition: {x: -6, y: 11, z: 0}
+  - spawnPosition: {x: -4, y: 11, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
     beginningTime: 24
@@ -5461,7 +5443,7 @@ MonoBehaviour:
   - spawnPosition: {x: 0, y: 11, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
-    beginningTime: 24.4
+    beginningTime: 24.2
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
     DropHealthPack: 0
@@ -5470,7 +5452,7 @@ MonoBehaviour:
   - spawnPosition: {x: 3, y: 11, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
-    beginningTime: 24.6
+    beginningTime: 24.5
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
     DropHealthPack: 0
@@ -5479,7 +5461,7 @@ MonoBehaviour:
   - spawnPosition: {x: 6, y: 11, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
-    beginningTime: 24.8
+    beginningTime: 24.5
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
     DropHealthPack: 0
@@ -5557,7 +5539,7 @@ MonoBehaviour:
     DropHealthPack: 0
     HD: {fileID: 0}
     bonusHP: 0
-  - spawnPosition: {x: 0, y: 20, z: 0}
+  - spawnPosition: {x: 0, y: 19, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
     beginningTime: 24
@@ -5605,7 +5587,7 @@ MonoBehaviour:
   - spawnPosition: {x: 5, y: 14, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
-    beginningTime: 27.5
+    beginningTime: 2727.5
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
     DropHealthPack: 0
@@ -5647,7 +5629,7 @@ MonoBehaviour:
     DropHealthPack: 0
     HD: {fileID: 0}
     bonusHP: 0
-  - spawnPosition: {x: 0, y: 20, z: 0}
+  - spawnPosition: {x: 0, y: 19, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
     beginningTime: 25
@@ -5710,7 +5692,7 @@ MonoBehaviour:
     DropHealthPack: 0
     HD: {fileID: 0}
     bonusHP: 0
-  - spawnPosition: {x: 0, y: 20, z: 0}
+  - spawnPosition: {x: 0, y: 19, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
     beginningTime: 26
@@ -5719,92 +5701,236 @@ MonoBehaviour:
     DropHealthPack: 0
     HD: {fileID: 0}
     bonusHP: 0
-  - spawnPosition: {x: -1, y: 9, z: 0}
-    spawnRotation: {x: 0, y: 0, z: 0}
-    scaling: {x: 0, y: 0, z: 0}
-    beginningTime: 27
-    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
-      type: 2}
-    DropHealthPack: 0
-    HD: {fileID: 0}
-    bonusHP: 0
-  - spawnPosition: {x: 1, y: 9, z: 0}
+  - spawnPosition: {x: -3, y: 19, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
     beginningTime: 28
-    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+    EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
       type: 2}
     DropHealthPack: 0
     HD: {fileID: 0}
     bonusHP: 0
-  - spawnPosition: {x: -2, y: 9, z: 0}
+  - spawnPosition: {x: 0, y: 19, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
     beginningTime: 29
-    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+    EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
       type: 2}
     DropHealthPack: 0
     HD: {fileID: 0}
     bonusHP: 0
-  - spawnPosition: {x: 2, y: 9, z: 0}
+  - spawnPosition: {x: 0, y: 19, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
     beginningTime: 30
-    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+    EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
       type: 2}
     DropHealthPack: 0
     HD: {fileID: 0}
     bonusHP: 0
-  - spawnPosition: {x: 0, y: 9, z: 0}
+  - spawnPosition: {x: 0, y: 19, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
     beginningTime: 31
+    EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: 0, y: 10, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 32
+    EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: 0, y: 11, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 39
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
     DropHealthPack: 0
     HD: {fileID: 0}
     bonusHP: 0
-  - spawnPosition: {x: 0, y: 9, z: 0}
+  - spawnPosition: {x: 0, y: 14, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
-    beginningTime: 32
-    EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
+    beginningTime: 39
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
     DropHealthPack: 0
     HD: {fileID: 0}
     bonusHP: 0
-  - spawnPosition: {x: 0, y: 9, z: 0}
+  - spawnPosition: {x: 0, y: 17, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
-    beginningTime: 33
-    EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
+    beginningTime: 39
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
     DropHealthPack: 0
     HD: {fileID: 0}
     bonusHP: 0
-  - spawnPosition: {x: 0, y: 9, z: 0}
+  - spawnPosition: {x: 0, y: 20, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
-    beginningTime: 34
-    EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
+    beginningTime: 39
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
     DropHealthPack: 0
     HD: {fileID: 0}
     bonusHP: 0
-  - spawnPosition: {x: 0, y: 9, z: 0}
-    spawnRotation: {x: 0, y: 0, z: 0}
-    scaling: {x: 0, y: 0, z: 0}
-    beginningTime: 35
-    EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
-      type: 2}
-    DropHealthPack: 0
-    HD: {fileID: 0}
-    bonusHP: 0
-  - spawnPosition: {x: -1, y: 9, z: 0}
+  - spawnPosition: {x: -5, y: 11, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
     beginningTime: 36
-    EnemyType: {fileID: 1127532357745728, guid: 2076bd88b3fa34de4a8c381bee3ed0cb,
+    EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: -5, y: 11, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 37
+    EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: -5, y: 11, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 38
+    EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: -5, y: 11, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 39
+    EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: -5, y: 11, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 40
+    EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: -5, y: 11, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 41
+    EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: -5, y: 11, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 36
+    EnemyType: {fileID: 1304032942466600, guid: 68190e9a631ad42edbfe4788609ddc01,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: 3, y: 11, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 45.5
+    EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: -3, y: 11, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 45.5
+    EnemyType: {fileID: 1094778054147576, guid: 50d0e32d3aee349dcae0e1084b5c4394,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: 6.2, y: 11, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 45
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: 6.2, y: 11, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 46
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: 6.2, y: 11, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 47
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: 6.2, y: 11, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 48
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: -6.2, y: 11, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 45
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: -6.2, y: 11, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 46
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: -6.2, y: 11, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 47
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
+      type: 2}
+    DropHealthPack: 0
+    HD: {fileID: 0}
+    bonusHP: 0
+  - spawnPosition: {x: -6.2, y: 11, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+    scaling: {x: 0, y: 0, z: 0}
+    beginningTime: 48
+    EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
     DropHealthPack: 0
     HD: {fileID: 0}
