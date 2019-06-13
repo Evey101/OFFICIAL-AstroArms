@@ -16,11 +16,11 @@ public class audioscript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        if (ooo.GetComponent<GameManagerScript>().enemyDied < 61 && eee.GetComponent<Cutscene1>().getit == true)
+        if (ooo.GetComponent<GameManagerScript>().enemyDied < 75 && eee.GetComponent<Cutscene1>().getit == true)
         {
             bg.SetActive(true);
         }
-        if (ooo.GetComponent<GameManagerScript>().enemyDied == 61)
+        if (ooo.GetComponent<GameManagerScript>().enemyDied == 75)
         {
             boss.SetActive(true);
             bg.SetActive(false);

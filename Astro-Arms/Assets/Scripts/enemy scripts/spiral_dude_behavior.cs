@@ -75,7 +75,7 @@ public class spiral_dude_behavior : MonoBehaviour
                 {
                     dtime += Time.deltaTime;
                     GetComponent<Animator>().Play("death explosion");
-                   // GameObject.Find("enemy spawner").GetComponent<GameManagerScript>().enemyDied += 1;
+                    GameObject.Find("enemy spawner").GetComponent<GameManagerScript>().enemyDied += 1;
                     GameObject.Find("player").GetComponent<playerController>().score += 10 * GameObject.Find("player").GetComponent<playerController>().multiplier;
                     GameObject.Find("player").GetComponent<playerController>().progressbar.fillAmount += .1f;
                     //GameObject.Find("player").GetComponent<playerController>().enemydied += 1;
@@ -172,6 +172,6 @@ public class spiral_dude_behavior : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameObject.Find("enemy spawner").GetComponent<GameManagerScript>().enemyDied += 1;
+        
     }
 }

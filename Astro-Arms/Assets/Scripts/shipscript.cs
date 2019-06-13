@@ -110,7 +110,7 @@ public class shipscript : MonoBehaviour
 
     void PhaseZeroFunction() 
     {
-        if (GameObject.Find("enemy spawner").GetComponent<GameManagerScript>().enemyDied == 61)
+        if (GameObject.Find("enemy spawner").GetComponent<GameManagerScript>().enemyDied == 75)
         {
             starttime += Time.deltaTime;
             start = 0;

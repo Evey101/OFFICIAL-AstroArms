@@ -3094,14 +3094,14 @@ MonoBehaviour:
   timer: 0
   finalscore: 0
   player: {fileID: 0}
-  scoresq: {fileID: 786725931}
-  livessq: {fileID: 1972951122}
-  enemiysq: {fileID: 457830836}
-  finalsq: {fileID: 828566990}
-  scoretxt: {fileID: 1699810682}
-  livetxt: {fileID: 1925267892}
-  enemytxt: {fileID: 105393128}
-  finaltxt: {fileID: 744799352}
+  scoresq: {fileID: 0}
+  livessq: {fileID: 0}
+  enemiysq: {fileID: 0}
+  finalsq: {fileID: 0}
+  scoretxt: {fileID: 0}
+  livetxt: {fileID: 0}
+  enemytxt: {fileID: 0}
+  finaltxt: {fileID: 0}
   h: 0
   bonus: 0
   thing: 0
@@ -5587,7 +5587,7 @@ MonoBehaviour:
   - spawnPosition: {x: 5, y: 14, z: 0}
     spawnRotation: {x: 0, y: 0, z: 0}
     scaling: {x: 0, y: 0, z: 0}
-    beginningTime: 2727.5
+    beginningTime: 27.5
     EnemyType: {fileID: 1653218394372682, guid: bafb113d87265411a8ce03d637b2b025,
       type: 2}
     DropHealthPack: 0
